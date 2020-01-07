@@ -54,7 +54,7 @@ void setup()
     spi_setup();
     serial_setup();
 
-    delay(10000);
+    delay(1000);
 
     HighPowerStepperDriver sd;
     setup_stepper(sd);
