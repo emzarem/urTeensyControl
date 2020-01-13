@@ -5,12 +5,12 @@
 #include <string.h>
 
 void test_serialization(void) {
-    Serial::CmdMsg to_send = {1, 1, 150, 1};
-    Serial::CmdMsg rcv;
+    SerialUtils::CmdMsg to_send = {1, 1, 150, 1};
+    SerialUtils::CmdMsg rcv;
     std::vector<char> buff;
    
-    Serial::pack(buff, to_send);
-    Serial::unpack(buff, rcv);
+    SerialUtils::pack(buff, to_send);
+    SerialUtils::unpack(buff, rcv);
 
     TEST_ASSERT_EQUAL(to_send.is_relative, rcv.is_relative);
     TEST_ASSERT_EQUAL(to_send.m1_angle, rcv.m1_angle);
