@@ -1,17 +1,29 @@
 #pragma once
 
-class SerialPacket {
-public:
-    SerialPacket();  // Constructor
-    SerialPacket(bool is_relative,
-                 float m1_angle,
-                 float m2_angle,
-                 float m3_angle);
-    ~SerialPacket() {};  // Destructor
+#include <vector>
+#include <string>
 
-    static void serialize(SerialPacket& sp, char* buff);
-    static void deserialize(SerialPacket& sp, char* buff);
+namespace Serial {
 
+struct CmdMsg{
     bool is_relative;
     float m1_angle, m2_angle, m3_angle;
 };
+
+union Packet {
+    CmdMsg msg;
+    char bytes[sizeof(CmdMsg)];
+} __attribute__((packed));
+
+inline void pack(std::vector<char> &dest, CmdMsg &src) {
+    Packet pkt = { .msg=src };
+    dest.insert(dest.end(), pkt.bytes, pkt.bytes + sizeof(CmdMsg));
+}
+
+inline void unpack(std::vector<char> &src, CmdMsg &dest) {
+    Packet pkt;
+    std::copy(src.begin(), src.end(), pkt.bytes);
+    dest = pkt.msg;
+}
+
+}
