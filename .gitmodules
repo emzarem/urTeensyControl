@@ -1,0 +1,3 @@
+[submodule "lib/Share/src"]
+	path = lib/Share/src
+	url = https://github.com/emzarem/urShare.git
