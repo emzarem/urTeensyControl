@@ -1,51 +1,27 @@
+#include "StepperMotor.h"
+#include "util.h"
+
 #include <Arduino.h>
-#include <HighPowerStepperDriver.h>
 #include <SPI.h>
 
-#define STD_LED 13
-
-static const int cs_pin = 10;
-static const int step_period_us = 2000;
-
-void spi_setup()
+static inline void spi_setup()
 {
-    SPI.setMOSI(11);
-    SPI.setMISO(12);
-    SPI.setSCK(14);
+    SPI.setMOSI(PIN_MOSI);
+    SPI.setMISO(PIN_MISO);
+    SPI.setSCK(PIN_SCK);
     SPI.begin();
 }
 
-void serial_setup()
+static inline void serial_setup()
 {
-    Serial.begin(115200);
-
-    while(!Serial){};
-    Serial.println("Hello");
+    Serial.begin(SER_BAUD_RATE);
+    while (!Serial){};
+    Serial.println("Starting...");
 }
 
-void spi_write(int addr, int val)
-{
-    digitalWrite(cs_pin, LOW);
-    SPI.transfer(addr);
-    SPI.transfer(val);
-    digitalWrite(cs_pin, HIGH);
-}
-
-void setup_stepper(HighPowerStepperDriver& sd)
-{
-    sd.setChipSelectPin(cs_pin);
-    delay(1);
-    sd.resetSettings();
-    delay(1);
-    sd.clearStatus();
-    delay(1);
-    sd.setDecayMode(HPSDDecayMode::AutoMixed);
-    delay(1);
-    sd.setCurrentMilliamps36v4(1000);
-    delay(1);
-    sd.setStepMode(HPSDStepMode::MicroStep1);
-    delay(1);
-    sd.enableDriver();
+int8_t get_char() {
+    if (Serial.available() > 0) return Serial.read();
+    return -1;
 }
 
 void setup() 
@@ -56,40 +32,30 @@ void setup()
 
     delay(1000);
 
-    HighPowerStepperDriver sd;
-    setup_stepper(sd);
+    StepperMotor sm(PIN_M1_CS); 
     delay(1);
-    
     
     pinMode(STD_LED, OUTPUT);
     digitalWrite(STD_LED, 1);
 
 
     while(1) {
-        sd.setDirection(0);
-        Serial.println("Moving forward...");
-        for(uint32_t i = 0; i < 1000; i++)
-        {
-            //spi_write(0x00, 0b101);
-            sd.step();
-            delayMicroseconds(step_period_us);
-        }
+        int8_t val = -1;
+        while(val == -1) {val = get_char();}
 
-        delay(3000);
-        Serial.println(sd.readStatus());
-        Serial.println(sd.verifySettings());
-
-        Serial.println("Moving backward...");
-        sd.setDirection(1);
-        for(uint32_t i = 0; i < 1000; i++)
-        {
-            sd.step();
-            delayMicroseconds(step_period_us);
-        }
-
-        delay(3000);
+        sm.set_angle(val, 1);
+        Serial.println("Moving ...");
+        while(!sm.inc_steps()){};
         
+        //for (int ang = 0; ang <= 360; ang += 90) {
+        //    sm.set_angle(ang, 1);
+        //    Serial.println("Moving forward...");
+        //    while(!sm.inc_steps()){};
 
+        //    delay(3000);
+        //    Serial.println(sm.readStatus());
+        //    Serial.println(sm.verifySettings());
+        //}
     };
 }
 
