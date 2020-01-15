@@ -5,7 +5,7 @@
 
 #define STD_LED 13
 
-SerialUtils::CmdMsg expected = {0, 1, 1, 1};
+SerialUtils::CmdMsg expected = {0, 180, 0, 0};
 
 void serial_setup() {
     Serial.begin(115200);

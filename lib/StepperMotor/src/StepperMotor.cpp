@@ -71,8 +71,7 @@ bool StepperMotor::inc_steps() {
 }
 
 bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
-    
-    m_step_target = (int16_t)(angle_degrees*m_deg_to_step) % m_steps_per_rev;
-    Serial.println(m_step_target);
+    int16_t new_step_target = (int16_t)(angle_degrees*m_deg_to_step) % m_steps_per_rev;
+    m_step_target = absolute ? new_step_target : m_step_target + new_step_target;
     return true;
 }
