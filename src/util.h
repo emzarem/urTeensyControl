@@ -1,6 +1,11 @@
 #pragma once
 
+#include <stdint.h>
+
 /* Pinout */
+// Sensors
+const uint8_t PIN_LIM1 = 16;
+
 // LEDs
 const uint8_t STD_LED = 13;
 
