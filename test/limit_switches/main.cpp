@@ -1,4 +1,5 @@
 #include "util.h"
+#include "SerialPacket.h"
 
 #include <Arduino.h>
 
@@ -39,6 +40,16 @@ void setup()
     attachInterrupt(PIN_LIM2, ISR2, FALLING);
     attachInterrupt(PIN_LIM3, ISR3, FALLING);
 
+    SerialUtils::CmdMsg tosend = {0};
+    tosend.motors_done = true;
+    std::vector<char> tx_buf;
+    SerialUtils::pack(tx_buf, tosend);
+    Serial.write((char *)&tx_buf[0], tx_buf.size());
+    
+    SerialUtils::CmdMsg rx = {0};
+    SerialUtils::unpack(tx_buf, rx);
+    Serial.println(rx.motors_done);
+    
     while(1) {
 //        Serial.println(digitalRead(PIN_LIM1));
     };

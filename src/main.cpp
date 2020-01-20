@@ -6,7 +6,11 @@
 #include <SPI.h>
 #include <vector>
 
-#define DEBUG
+#ifdef USE_USB
+    HardwareSerial& SerialPort = Serial;
+#else
+    HardwareSerial& SerialPort = Serial1;
+#endif
 
 static inline void spi_setup()
 {
@@ -18,15 +22,13 @@ static inline void spi_setup()
 
 static inline void serial_setup()
 {
-    Serial.begin(SER_BAUD_RATE);
-    while (!Serial){};
-#ifdef DEBUG    
-    Serial.println("Starting...");
-#endif
+    SerialPort.begin(SER_BAUD_RATE);
+    while (!SerialPort){};
+    SerialPort.println("");
 }
 
 int8_t get_char() {
-    if (Serial.available() > 0) return Serial.read();
+    if (SerialPort.available() > 0) return SerialPort.read();
     return -1;
 }
 
@@ -58,6 +60,8 @@ void setup()
     digitalWrite(STD_LED, 1);
 
     std::vector<char> bytes;
+    SerialUtils::CmdMsg *p_rx_msg = NULL;
+
     std::vector<StepperMotor*> motors;
     motors.push_back(&sm1);
     motors.push_back(&sm2);
@@ -69,16 +73,23 @@ void setup()
     delay(1000);
 
     while(1) {
-        if (Serial.available() > 0) { bytes.push_back(Serial.read()); }
+        if (SerialPort.available() > 0) {
+            uint8_t next_byte = SerialPort.read();
+            if (next_byte == SerialUtils::DELIMITER) {
+                p_rx_msg = new SerialUtils::CmdMsg();
+                SerialUtils::unpack(bytes, *p_rx_msg);
+                bytes.clear();
+            } else {
+                bytes.push_back(next_byte);
+            }
+        }
         
-        if (bytes.size() >= sizeof(SerialUtils::CmdMsg) ) {
-            SerialUtils::CmdMsg rcvd = {0};
-            SerialUtils::unpack(bytes.begin(), bytes.begin() + sizeof(SerialUtils::CmdMsg), rcvd);
-            bytes.erase(bytes.begin(), bytes.begin() + sizeof(SerialUtils::CmdMsg));
-
-            sm1.set_angle(rcvd.m1_angle, !rcvd.is_relative);
-            sm2.set_angle(rcvd.m2_angle, !rcvd.is_relative);
-            sm3.set_angle(rcvd.m3_angle, !rcvd.is_relative);
+        if (p_rx_msg) {
+            sm1.set_angle(p_rx_msg->m1_angle, !p_rx_msg->is_relative);
+            sm2.set_angle(p_rx_msg->m2_angle, !p_rx_msg->is_relative);
+            sm3.set_angle(p_rx_msg->m3_angle, !p_rx_msg->is_relative);
+            delete p_rx_msg;
+            p_rx_msg = NULL;
         }
        
         bool done = true;
@@ -91,7 +102,7 @@ void setup()
             tosend.motors_done = true;
             std::vector<char> tx_buf;
             SerialUtils::pack(tx_buf, tosend);
-            Serial.write((char *)&tx_buf[0], tx_buf.size());
+            SerialPort.write((char *)&tx_buf[0], tx_buf.size());
         }
     };
 }
