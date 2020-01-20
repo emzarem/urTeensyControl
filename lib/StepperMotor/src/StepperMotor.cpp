@@ -116,6 +116,9 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
     if (angle_degrees > max_angle_degrees) {
         angle_degrees = max_angle_degrees;
         success = false;
+    } else if (angle_degrees < 0) {
+        angle_degrees = 0;
+        success = false;
     }
 
     int16_t new_step_target = (int16_t)(angle_degrees*m_deg_to_step) % m_steps_per_rev;

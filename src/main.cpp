@@ -64,7 +64,7 @@ void setup()
     motors.push_back(&sm3);
 
     StepperMotor::calibrate(motors);
-
+    
     serial_setup();
     delay(1000);
 
@@ -80,8 +80,19 @@ void setup()
             sm2.set_angle(rcvd.m2_angle, !rcvd.is_relative);
             sm3.set_angle(rcvd.m3_angle, !rcvd.is_relative);
         }
+       
+        bool done = true;
+        for (auto& mtr : motors)
+            done &= mtr->inc_steps();
 
-        for (auto& mtr : motors) mtr->inc_steps();
+        // Let the controller know if movement completed
+        if (done) {
+            SerialUtils::CmdMsg tosend = {0};
+            tosend.motors_done = true;
+            std::vector<char> tx_buf;
+            SerialUtils::pack(tx_buf, tosend);
+            Serial.write((char *)&tx_buf[0], tx_buf.size());
+        }
     };
 }
 
