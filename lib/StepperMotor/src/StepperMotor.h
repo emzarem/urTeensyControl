@@ -17,6 +17,11 @@ public:
     bool inc_steps();  // step the motor if not at target yet
     bool set_angle(float angle_degrees, bool absolute);  // set the angle
 
+    static void calibrate(
+        std::vector<StepperMotor*> mts);  // step until limit hit
+
+    static const float max_angle_degrees = 45;  // as measured from the limit
+
 private:
     static void limit_switch_isr(void);
 

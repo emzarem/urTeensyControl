@@ -5,6 +5,28 @@
 std::vector<std::pair<uint8_t, StepperMotor*> > StepperMotor::itr_list =
     std::vector<std::pair<uint8_t, StepperMotor*> >();
 
+/* Function: calibrate
+ * Inputs:
+ *              None
+ * Outputs:
+ *              None
+ */
+void StepperMotor::calibrate(std::vector<StepperMotor*> mtrs) {
+    while (mtrs.size() > 0) {
+        for (int i = 0; i < mtrs.size(); i++) {
+            StepperMotor* mtr = mtrs[i];
+            if (mtr->m_at_limit) {
+                mtr->m_step_target = 0;
+                mtrs.erase(mtrs.begin() + i);
+                i--;
+            } else {
+                mtr->m_step_target = mtr->m_step_crnt + 1;
+                mtr->inc_steps();
+            }
+        }
+    }
+}
+
 /* Function: StepperMotor
  * Inputs:
  *              cs_pin - chip select pin for this motor
@@ -48,6 +70,7 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
  */
 StepperMotor::~StepperMotor() {}
 
+
 /* Function: inc_steps
  * Inputs:
  *              None
@@ -88,9 +111,16 @@ bool StepperMotor::inc_steps() {
  *              bool - true if success (not currently checking fail)
  */
 bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
+    bool success = true;
+
+    if (angle_degrees > max_angle_degrees) {
+        angle_degrees = max_angle_degrees;
+        success = false;
+    }
+
     int16_t new_step_target = (int16_t)(angle_degrees*m_deg_to_step) % m_steps_per_rev;
     m_step_target = absolute ? new_step_target : m_step_target + new_step_target;
-    return true;
+    return success;
 }
 
 /* Function: <limit_switch_isr>
@@ -102,9 +132,10 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
 void StepperMotor::limit_switch_isr(void) {
     for (auto& mtr : itr_list) {
         if (digitalRead(mtr.first) == LOW) {
-            mtr.second->at_limit = true;
+            mtr.second->m_at_limit = true;
+            mtr.second->m_step_crnt = 0;
         } else {
-            mtr.second->at_limit = false;
+            mtr.second->m_at_limit = false;
         }
     }
 }

@@ -41,13 +41,11 @@ void blink() {
 void setup() 
 {
     spi_setup();
-    serial_setup();
-
     delay(1000);
 
-    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, 500);
-    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, 500);
-    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, 500);
+    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, 1000);
+    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, 1000);
+    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, 1000);
 
     pinMode(PIN_N_SLP, OUTPUT);
     pinMode(PIN_RST, OUTPUT);
@@ -60,6 +58,15 @@ void setup()
     digitalWrite(STD_LED, 1);
 
     std::vector<char> bytes;
+    std::vector<StepperMotor*> motors;
+    motors.push_back(&sm1);
+    motors.push_back(&sm2);
+    motors.push_back(&sm3);
+
+    StepperMotor::calibrate(motors);
+
+    serial_setup();
+    delay(1000);
 
     while(1) {
         if (Serial.available() > 0) { bytes.push_back(Serial.read()); }
@@ -73,10 +80,8 @@ void setup()
             sm2.set_angle(rcvd.m2_angle, !rcvd.is_relative);
             sm3.set_angle(rcvd.m3_angle, !rcvd.is_relative);
         }
-        
-        sm1.inc_steps();
-        sm2.inc_steps();
-        sm3.inc_steps();
+
+        for (auto& mtr : motors) mtr->inc_steps();
     };
 }
 
