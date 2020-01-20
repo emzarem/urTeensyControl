@@ -36,24 +36,24 @@ void blink() {
     digitalWrite(STD_LED, 0);
     delay(100);
     digitalWrite(STD_LED, 1);
-    //    delay(250);
-    //    digitalWrite(STD_LED, 0);
-    //    delay(250);
-    //    digitalWrite(STD_LED, 1);
 }
 
 void setup() 
 {
-    //pinMode(cs_pin, OUTPUT);
     spi_setup();
     serial_setup();
 
     delay(1000);
 
-    StepperMotor sm1(PIN_M1_CS, HPSDDecayMode::AutoMixed, 500); 
-    StepperMotor sm2(PIN_M2_CS, HPSDDecayMode::AutoMixed, 500); 
-    StepperMotor sm3(PIN_M3_CS, HPSDDecayMode::AutoMixed, 500); 
-  
+    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, 500);
+    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, 500);
+    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, 500);
+
+    pinMode(PIN_N_SLP, OUTPUT);
+    pinMode(PIN_RST, OUTPUT);
+    digitalWrite(PIN_N_SLP, 1);
+    digitalWrite(PIN_RST, 0);
+
     delay(1);
     
     pinMode(STD_LED, OUTPUT);
