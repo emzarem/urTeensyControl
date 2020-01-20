@@ -4,7 +4,10 @@
 
 /* Pinout */
 // Sensors
-const uint8_t PIN_LIM1 = 16;
+const uint8_t PIN_LIM1 = 15;
+const uint8_t PIN_LIM2 = 16;
+const uint8_t PIN_LIM3 = 17;
+
 
 // LEDs
 const uint8_t STD_LED = 13;
