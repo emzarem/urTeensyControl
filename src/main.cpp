@@ -6,8 +6,10 @@
 #include <SPI.h>
 #include <vector>
 
+//#define USE_USB
+
 #ifdef USE_USB
-    HardwareSerial& SerialPort = Serial;
+    usb_serial_class& SerialPort = Serial;
 #else
     HardwareSerial& SerialPort = Serial1;
 #endif
