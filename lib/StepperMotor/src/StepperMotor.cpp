@@ -20,7 +20,7 @@ void StepperMotor::calibrate(std::vector<StepperMotor*> mtrs) {
                 mtrs.erase(mtrs.begin() + i);
                 i--;
             } else {
-                mtr->m_step_target = mtr->m_step_crnt + 1;
+                mtr->m_step_target = mtr->m_step_crnt - 1;
                 mtr->inc_steps();
             }
         }

@@ -36,7 +36,7 @@ private:
 
     static std::vector<std::pair<uint8_t, StepperMotor*> > itr_list;
 
-    static const uint32_t step_period_us = 2000;     // step_period_us
+    static const uint32_t step_period_us = 5000;     // step_period_us
     static const uint16_t full_steps_per_rev = 200;  // 1.8 deg per step
     static const bool forward_direction = 1;         // reference
 };
