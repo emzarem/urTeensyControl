@@ -58,6 +58,7 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
     // Setup interrupts
     pinMode(lim_pin, INPUT);
     itr_list.push_back(std::make_pair(lim_pin, this));
+    StepperMotor::limit_switch_isr(); // in case we start against a switch
     attachInterrupt(lim_pin, StepperMotor::limit_switch_isr, CHANGE);
 }
 
@@ -134,7 +135,7 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
  */
 void StepperMotor::limit_switch_isr(void) {
     for (auto& mtr : itr_list) {
-        if (digitalRead(mtr.first) == LOW) {
+        if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             mtr.second->m_step_crnt = 0;
         } else {

@@ -74,6 +74,8 @@ void setup()
     serial_setup();
     delay(1000);
 
+    bool msg_sent = false;
+
     while(1) {
         if (SerialPort.available() > 0) {
             uint8_t next_byte = SerialPort.read();
@@ -92,6 +94,7 @@ void setup()
             sm3.set_angle(p_rx_msg->m3_angle, !p_rx_msg->is_relative);
             delete p_rx_msg;
             p_rx_msg = NULL;
+            msg_sent = false;
         }
        
         bool done = true;
@@ -99,12 +102,13 @@ void setup()
             done &= mtr->inc_steps();
 
         // Let the controller know if movement completed
-        if (done) {
+        if (done && !msg_sent) {
             SerialUtils::CmdMsg tosend = {0};
             tosend.motors_done = true;
             std::vector<char> tx_buf;
             SerialUtils::pack(tx_buf, tosend);
             SerialPort.write((char *)&tx_buf[0], tx_buf.size());
+            msg_sent = true;
         }
     };
 }
