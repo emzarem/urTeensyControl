@@ -14,6 +14,9 @@
     HardwareSerial& SerialPort = Serial1;
 #endif
 
+static const int CURRENT_LIMIT = 2500;
+static const HPSDStepMode STEP_MODE = HPSDStepMode::MicroStep4;
+
 static inline void spi_setup()
 {
     SPI.setMOSI(PIN_MOSI);
@@ -47,9 +50,9 @@ void setup()
     spi_setup();
     delay(1000);
 
-    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, 1000, HPSDStepMode::MicroStep4);
-    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, 1000, HPSDStepMode::MicroStep4);
-    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, 1000, HPSDStepMode::MicroStep4);
+    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
 
     pinMode(PIN_N_SLP, OUTPUT);
     pinMode(PIN_RST, OUTPUT);
