@@ -15,7 +15,7 @@
 #endif
 
 static const int CURRENT_LIMIT = 2500;
-static const HPSDStepMode STEP_MODE = HPSDStepMode::MicroStep4;
+static const HPSDStepMode STEP_MODE = HPSDStepMode::MicroStep2;
 
 static inline void spi_setup()
 {
