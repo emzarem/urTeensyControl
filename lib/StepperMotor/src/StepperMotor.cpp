@@ -1,6 +1,7 @@
 #include "StepperMotor.h"
 
 #include <Arduino.h>
+#include <Encoder.h>
 
 std::vector<std::pair<uint8_t, StepperMotor*> > StepperMotor::itr_list =
     std::vector<std::pair<uint8_t, StepperMotor*> >();
@@ -38,6 +39,8 @@ void StepperMotor::calibrate(std::vector<StepperMotor*> mtrs) {
  */
 StepperMotor::StepperMotor(uint8_t cs_pin,
                            uint8_t lim_pin,
+                           uint8_t encA_pin,
+                           uint8_t encB_pin,
                            HPSDDecayMode decay_mode,
                            uint16_t current_lim_mA,
                            HPSDStepMode step_mode)
@@ -55,6 +58,9 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
     m_steps_per_rev = (uint16_t)step_mode * StepperMotor::full_steps_per_rev;
     m_deg_to_step = (float)m_steps_per_rev / 360;
 
+    // Setup encoder
+    m_enc = new Encoder(encA_pin, encB_pin);
+
     // Setup interrupts
     pinMode(lim_pin, INPUT);
     itr_list.push_back(std::make_pair(lim_pin, this));
@@ -69,7 +75,9 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
  * Outputs:
  *              None
  */
-StepperMotor::~StepperMotor() {}
+StepperMotor::~StepperMotor() {
+    delete m_enc;
+}
 
 
 /* Function: inc_steps
@@ -79,6 +87,7 @@ StepperMotor::~StepperMotor() {}
  *              bool - success or not
  */
 bool StepperMotor::inc_steps() {
+    update_step_count();
     if (m_step_crnt == m_step_target) { return true; }
 
     bool dir = getDirection();
@@ -127,6 +136,16 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
     return success;
 }
 
+/* Function: update_step_count
+ * Inputs:
+ *              None
+ * Outputs:
+ *              None
+ */
+void StepperMotor::update_step_count() {
+    m_step_crnt = (int16_t)(0.5*m_step_crnt + 0.5*enc_to_step(m_enc->read()));
+}
+
 /* Function: <limit_switch_isr>
  * Inputs:
  *              mtr - pointer to the motor
@@ -138,6 +157,7 @@ void StepperMotor::limit_switch_isr(void) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             mtr.second->m_step_crnt = 0;
+            mtr.second->m_enc->write(0);
         } else {
             mtr.second->m_at_limit = false;
         }
