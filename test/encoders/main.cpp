@@ -3,14 +3,6 @@
 #include <Arduino.h>
 #include <Encoder.h>
 
-static const int PIN_ENC1A = 18;
-static const int PIN_ENC1B = 19;
-static const int PIN_ENC2A = 20;
-static const int PIN_ENC2B = 21;
-static const int PIN_ENC3A = 22;
-static const int PIN_ENC3B = 23;
-
-
 static inline void serial_setup()
 {
     Serial.begin(SER_BAUD_RATE);
