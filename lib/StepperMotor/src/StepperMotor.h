@@ -20,7 +20,7 @@ public:
     static void calibrate(
         std::vector<StepperMotor*> mts);  // step until limit hit
 
-    static const float max_angle_degrees = 80;  // as measured from the limit
+    static const float max_angle_degrees = 90;  // as measured from the limit
 
 private:
     static void limit_switch_isr(void);
