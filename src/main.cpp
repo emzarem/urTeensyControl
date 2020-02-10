@@ -92,9 +92,19 @@ void setup()
         }
         
         if (p_rx_msg) {
-            sm1.set_angle(p_rx_msg->m1_angle, !p_rx_msg->is_relative);
-            sm2.set_angle(p_rx_msg->m2_angle, !p_rx_msg->is_relative);
-            sm3.set_angle(p_rx_msg->m3_angle, !p_rx_msg->is_relative);
+            // If they are all 0, we are effectively do calibration again
+            if (0 == p_rx_msg->m1_angle &&
+                0 == p_rx_msg->m2_angle &&
+                0 == p_rx_msg->m3_angle)
+            {
+                StepperMotor::calibrate(motors);
+            }
+            else
+            {
+                sm1.set_angle(p_rx_msg->m1_angle, !p_rx_msg->is_relative);
+                sm2.set_angle(p_rx_msg->m2_angle, !p_rx_msg->is_relative);
+                sm3.set_angle(p_rx_msg->m3_angle, !p_rx_msg->is_relative);
+            }
             delete p_rx_msg;
             p_rx_msg = NULL;
             msg_sent = false;
