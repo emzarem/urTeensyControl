@@ -3,8 +3,8 @@
 #include <Arduino.h>
 #include <Encoder.h>
 
-std::vector<std::pair<uint8_t, StepperMotor*> > StepperMotor::itr_list =
-    std::vector<std::pair<uint8_t, StepperMotor*> >();
+std::vector<std::pair<uint8_t, StepperMotor *> > StepperMotor::itr_list =
+    std::vector<std::pair<uint8_t, StepperMotor *> >();
 
 /* Function: calibrate
  * Inputs:
@@ -12,18 +12,18 @@ std::vector<std::pair<uint8_t, StepperMotor*> > StepperMotor::itr_list =
  * Outputs:
  *              None
  */
-void StepperMotor::calibrate(std::vector<StepperMotor*> mtrs) {
-    while (mtrs.size() > 0) {
-        for (int i = 0; i < mtrs.size(); i++) {
-            StepperMotor* mtr = mtrs[i];
-            if (mtr->m_at_limit) {
-                mtr->m_step_target = 0;
-                mtrs.erase(mtrs.begin() + i);
-                i--;
-            } else {
-                mtr->m_step_target = mtr->m_step_crnt - 1;
-                mtr->inc_steps();
-            }
+void StepperMotor::calibrate(std::vector<StepperMotor *> mtrs) {
+    bool done = false;
+    for (StepperMotor *mtr : mtrs) {
+        mtr->m_step_target = 0;
+        mtr->setDirection(!StepperMotor::forward_direction);
+    }
+
+    while (!done) {
+        done = true;
+        for (StepperMotor *mtr : mtrs) {
+            if (!mtr->m_at_limit) mtr->time_safe_step();
+            done &= mtr->m_at_limit;
         }
     }
 }
@@ -43,8 +43,14 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
                            uint8_t encB_pin,
                            HPSDDecayMode decay_mode,
                            uint16_t current_lim_mA,
-                           HPSDStepMode step_mode)
-    : m_last_step_us(0), m_step_target(0), m_step_crnt(0), m_at_limit(false) {
+                           HPSDStepMode step_mode,
+                           bool use_enc)
+    : m_last_step_us(0),
+      m_step_target(0),
+      m_step_crnt(0),
+      m_step_bkup(0),
+      m_at_limit(false),
+      m_no_enc(!use_enc) {
     // Setup stepper
     setChipSelectPin(cs_pin);
     resetSettings();
@@ -60,11 +66,13 @@ StepperMotor::StepperMotor(uint8_t cs_pin,
 
     // Setup encoder
     m_enc = new Encoder(encA_pin, encB_pin);
+    m_enc->write(-1 * enc_cpr);  // -1 because encoder counts in opposite
+                                 // direction to our convention
 
     // Setup interrupts
     pinMode(lim_pin, INPUT);
     itr_list.push_back(std::make_pair(lim_pin, this));
-    StepperMotor::limit_switch_isr(); // in case we start against a switch
+    StepperMotor::limit_switch_isr();  // in case we start against a switch
     attachInterrupt(lim_pin, StepperMotor::limit_switch_isr, CHANGE);
 }
 
@@ -88,7 +96,9 @@ StepperMotor::~StepperMotor() {
  */
 bool StepperMotor::inc_steps() {
     update_step_count();
-    if (m_step_crnt == m_step_target) { return true; }
+    if (abs(m_step_crnt - m_step_target) < StepperMotor::step_tol) {
+        return true;
+    }
 
     bool dir = getDirection();
 
@@ -99,15 +109,8 @@ bool StepperMotor::inc_steps() {
         setDirection(!StepperMotor::forward_direction);
     }
 
-    // Ensure not going faster than step period
-    uint32_t elapsed_time = micros() - m_last_step_us;
-    if (elapsed_time < step_period_us) {
-        delayMicroseconds(step_period_us - elapsed_time);
-    }
-
-    step();
-    m_step_crnt = dir ? m_step_crnt + 1 : m_step_crnt - 1; 
-    m_last_step_us = micros();
+    time_safe_step();
+    m_step_bkup = dir ? m_step_crnt + 1 : m_step_crnt - 1;
 
     // Check for errors
     return false;
@@ -131,10 +134,30 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
         success = false;
     }
 
-    int16_t new_step_target = (int16_t)(angle_degrees*m_deg_to_step) % m_steps_per_rev;
-    m_step_target = absolute ? new_step_target : m_step_target + new_step_target;
+    int16_t new_step_target =
+        (int16_t)(angle_degrees * m_deg_to_step) % m_steps_per_rev;
+    m_step_target =
+        absolute ? new_step_target : m_step_target + new_step_target;
     return success;
 }
+
+/* Function: time_safe_step
+ * Inputs:
+ *              None
+ * Outputs:
+ *              None
+ */
+void StepperMotor::time_safe_step() {
+    // Ensure not going faster than step period
+    uint32_t elapsed_time = micros() - m_last_step_us;
+    if (elapsed_time < step_period_us) {
+        delayMicroseconds(step_period_us - elapsed_time);
+    }
+
+    step();
+    m_last_step_us = micros();
+}
+
 
 /* Function: update_step_count
  * Inputs:
@@ -143,7 +166,11 @@ bool StepperMotor::set_angle(float angle_degrees, bool absolute) {
  *              None
  */
 void StepperMotor::update_step_count() {
-    m_step_crnt = (int16_t)(0.5*m_step_crnt + 0.5*enc_to_step(m_enc->read()));
+    m_step_crnt =
+        m_no_enc
+            ? m_step_bkup
+            : (int16_t)(StepperMotor::step_weight * m_step_crnt +
+                        StepperMotor::enc_weight * enc_to_step(m_enc->read()));
 }
 
 /* Function: <limit_switch_isr>
@@ -153,7 +180,7 @@ void StepperMotor::update_step_count() {
  *              None
  */
 void StepperMotor::limit_switch_isr(void) {
-    for (auto& mtr : itr_list) {
+    for (auto &mtr : itr_list) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             mtr.second->m_step_crnt = 0;
