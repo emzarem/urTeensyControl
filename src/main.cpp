@@ -50,9 +50,9 @@ void setup()
     spi_setup();
     delay(1000);
 
-    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
-    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
-    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
 
     pinMode(PIN_N_SLP, OUTPUT);
     pinMode(PIN_RST, OUTPUT);
