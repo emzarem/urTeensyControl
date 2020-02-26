@@ -1,0 +1,514 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AOCP	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AOCP = 1,$/;"	m	class:HPSDStatusBit
+AOCP	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AOCP = 1,$/;"	m	class:HPSDStatusBit
+AOCP	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AOCP = 1,$/;"	m	class:HPSDStatusBit
+AOCP	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AOCP = 1,$/;"	m	class:HPSDStatusBit
+AOCP	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AOCP = 1,$/;"	m	class:HPSDStatusBit
+APDF	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  APDF = 3,$/;"	m	class:HPSDStatusBit
+APDF	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  APDF = 3,$/;"	m	class:HPSDStatusBit
+APDF	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  APDF = 3,$/;"	m	class:HPSDStatusBit
+APDF	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  APDF = 3,$/;"	m	class:HPSDStatusBit
+APDF	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  APDF = 3,$/;"	m	class:HPSDStatusBit
+AutoMixed	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AutoMixed           = 0b101,$/;"	m	class:HPSDDecayMode
+AutoMixed	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AutoMixed           = 0b101,$/;"	m	class:HPSDDecayMode
+AutoMixed	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AutoMixed           = 0b101,$/;"	m	class:HPSDDecayMode
+AutoMixed	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AutoMixed           = 0b101,$/;"	m	class:HPSDDecayMode
+AutoMixed	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  AutoMixed           = 0b101,$/;"	m	class:HPSDDecayMode
+BLANK	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BLANK  = 0x03,$/;"	m	class:HPSDRegAddr
+BLANK	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BLANK  = 0x03,$/;"	m	class:HPSDRegAddr
+BLANK	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BLANK  = 0x03,$/;"	m	class:HPSDRegAddr
+BLANK	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BLANK  = 0x03,$/;"	m	class:HPSDRegAddr
+BLANK	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BLANK  = 0x03,$/;"	m	class:HPSDRegAddr
+BOCP	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BOCP = 2,$/;"	m	class:HPSDStatusBit
+BOCP	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BOCP = 2,$/;"	m	class:HPSDStatusBit
+BOCP	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BOCP = 2,$/;"	m	class:HPSDStatusBit
+BOCP	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BOCP = 2,$/;"	m	class:HPSDStatusBit
+BOCP	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BOCP = 2,$/;"	m	class:HPSDStatusBit
+BPDF	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BPDF = 4,$/;"	m	class:HPSDStatusBit
+BPDF	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BPDF = 4,$/;"	m	class:HPSDStatusBit
+BPDF	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BPDF = 4,$/;"	m	class:HPSDStatusBit
+BPDF	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BPDF = 4,$/;"	m	class:HPSDStatusBit
+BPDF	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  BPDF = 4,$/;"	m	class:HPSDStatusBit
+CTRL	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  CTRL   = 0x00,$/;"	m	class:HPSDRegAddr
+CTRL	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  CTRL   = 0x00,$/;"	m	class:HPSDRegAddr
+CTRL	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  CTRL   = 0x00,$/;"	m	class:HPSDRegAddr
+CTRL	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  CTRL   = 0x00,$/;"	m	class:HPSDRegAddr
+CTRL	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  CTRL   = 0x00,$/;"	m	class:HPSDRegAddr
+CURRENT_LIMIT	src/main.cpp	/^static const int CURRENT_LIMIT = 2500;$/;"	v	file:
+CmdMsg	lib/Share/src/SerialPacket.h	/^struct CmdMsg {$/;"	s	namespace:SerialUtils
+DEBUG	test/just_keep_swimming/main.cpp	9;"	d	file:
+DEBUG	test/limit_switches/main.cpp	6;"	d	file:
+DECAY	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DECAY  = 0x04,$/;"	m	class:HPSDRegAddr
+DECAY	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DECAY  = 0x04,$/;"	m	class:HPSDRegAddr
+DECAY	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DECAY  = 0x04,$/;"	m	class:HPSDRegAddr
+DECAY	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DECAY  = 0x04,$/;"	m	class:HPSDRegAddr
+DECAY	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DECAY  = 0x04,$/;"	m	class:HPSDRegAddr
+DELIMITER	lib/Share/src/SerialPacket.h	/^static const char DELIMITER = '\\n';$/;"	m	namespace:SerialUtils
+DRIVE	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRIVE  = 0x06,$/;"	m	class:HPSDRegAddr
+DRIVE	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRIVE  = 0x06,$/;"	m	class:HPSDRegAddr
+DRIVE	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRIVE  = 0x06,$/;"	m	class:HPSDRegAddr
+DRIVE	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRIVE  = 0x06,$/;"	m	class:HPSDRegAddr
+DRIVE	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRIVE  = 0x06,$/;"	m	class:HPSDRegAddr
+DRV8711SPI	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class DRV8711SPI$/;"	c
+DRV8711SPI	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class DRV8711SPI$/;"	c
+DRV8711SPI	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class DRV8711SPI$/;"	c
+DRV8711SPI	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class DRV8711SPI$/;"	c
+DRV8711SPI	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class DRV8711SPI$/;"	c
+Fast	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Fast                = 0b010,$/;"	m	class:HPSDDecayMode
+Fast	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Fast                = 0b010,$/;"	m	class:HPSDDecayMode
+Fast	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Fast                = 0b010,$/;"	m	class:HPSDDecayMode
+Fast	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Fast                = 0b010,$/;"	m	class:HPSDDecayMode
+Fast	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Fast                = 0b010,$/;"	m	class:HPSDDecayMode
+HPSDDecayMode	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDDecayMode : uint8_t$/;"	c
+HPSDDecayMode	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDDecayMode : uint8_t$/;"	c
+HPSDDecayMode	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDDecayMode : uint8_t$/;"	c
+HPSDDecayMode	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDDecayMode : uint8_t$/;"	c
+HPSDDecayMode	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDDecayMode : uint8_t$/;"	c
+HPSDRegAddr	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDRegAddr : uint8_t$/;"	c
+HPSDRegAddr	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDRegAddr : uint8_t$/;"	c
+HPSDRegAddr	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDRegAddr : uint8_t$/;"	c
+HPSDRegAddr	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDRegAddr : uint8_t$/;"	c
+HPSDRegAddr	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDRegAddr : uint8_t$/;"	c
+HPSDStatusBit	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStatusBit : uint8_t$/;"	c
+HPSDStatusBit	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStatusBit : uint8_t$/;"	c
+HPSDStatusBit	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStatusBit : uint8_t$/;"	c
+HPSDStatusBit	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStatusBit : uint8_t$/;"	c
+HPSDStatusBit	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStatusBit : uint8_t$/;"	c
+HPSDStepMode	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStepMode : uint16_t$/;"	c
+HPSDStepMode	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStepMode : uint16_t$/;"	c
+HPSDStepMode	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStepMode : uint16_t$/;"	c
+HPSDStepMode	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStepMode : uint16_t$/;"	c
+HPSDStepMode	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^enum class HPSDStepMode : uint16_t$/;"	c
+HighPowerStepperDriver	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  HighPowerStepperDriver()$/;"	f	class:HighPowerStepperDriver
+HighPowerStepperDriver	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class HighPowerStepperDriver$/;"	c
+HighPowerStepperDriver	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  HighPowerStepperDriver()$/;"	f	class:HighPowerStepperDriver
+HighPowerStepperDriver	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class HighPowerStepperDriver$/;"	c
+HighPowerStepperDriver	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  HighPowerStepperDriver()$/;"	f	class:HighPowerStepperDriver
+HighPowerStepperDriver	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class HighPowerStepperDriver$/;"	c
+HighPowerStepperDriver	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  HighPowerStepperDriver()$/;"	f	class:HighPowerStepperDriver
+HighPowerStepperDriver	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class HighPowerStepperDriver$/;"	c
+HighPowerStepperDriver	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  HighPowerStepperDriver()$/;"	f	class:HighPowerStepperDriver
+HighPowerStepperDriver	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^class HighPowerStepperDriver$/;"	c
+ISR1	test/limit_switches/main.cpp	/^void ISR1(void) {$/;"	f
+ISR2	test/limit_switches/main.cpp	/^void ISR2(void) {$/;"	f
+ISR3	test/limit_switches/main.cpp	/^void ISR3(void) {$/;"	f
+MicroStep1	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep1   =   1,$/;"	m	class:HPSDStepMode
+MicroStep1	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep1   =   1,$/;"	m	class:HPSDStepMode
+MicroStep1	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep1   =   1,$/;"	m	class:HPSDStepMode
+MicroStep1	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep1   =   1,$/;"	m	class:HPSDStepMode
+MicroStep1	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep1   =   1,$/;"	m	class:HPSDStepMode
+MicroStep128	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep128 = 128,$/;"	m	class:HPSDStepMode
+MicroStep128	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep128 = 128,$/;"	m	class:HPSDStepMode
+MicroStep128	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep128 = 128,$/;"	m	class:HPSDStepMode
+MicroStep128	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep128 = 128,$/;"	m	class:HPSDStepMode
+MicroStep128	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep128 = 128,$/;"	m	class:HPSDStepMode
+MicroStep16	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep16  =  16,$/;"	m	class:HPSDStepMode
+MicroStep16	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep16  =  16,$/;"	m	class:HPSDStepMode
+MicroStep16	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep16  =  16,$/;"	m	class:HPSDStepMode
+MicroStep16	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep16  =  16,$/;"	m	class:HPSDStepMode
+MicroStep16	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep16  =  16,$/;"	m	class:HPSDStepMode
+MicroStep2	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep2   =   2,$/;"	m	class:HPSDStepMode
+MicroStep2	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep2   =   2,$/;"	m	class:HPSDStepMode
+MicroStep2	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep2   =   2,$/;"	m	class:HPSDStepMode
+MicroStep2	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep2   =   2,$/;"	m	class:HPSDStepMode
+MicroStep2	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep2   =   2,$/;"	m	class:HPSDStepMode
+MicroStep256	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep256 = 256,$/;"	m	class:HPSDStepMode
+MicroStep256	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep256 = 256,$/;"	m	class:HPSDStepMode
+MicroStep256	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep256 = 256,$/;"	m	class:HPSDStepMode
+MicroStep256	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep256 = 256,$/;"	m	class:HPSDStepMode
+MicroStep256	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep256 = 256,$/;"	m	class:HPSDStepMode
+MicroStep32	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep32  =  32,$/;"	m	class:HPSDStepMode
+MicroStep32	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep32  =  32,$/;"	m	class:HPSDStepMode
+MicroStep32	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep32  =  32,$/;"	m	class:HPSDStepMode
+MicroStep32	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep32  =  32,$/;"	m	class:HPSDStepMode
+MicroStep32	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep32  =  32,$/;"	m	class:HPSDStepMode
+MicroStep4	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep4   =   4,$/;"	m	class:HPSDStepMode
+MicroStep4	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep4   =   4,$/;"	m	class:HPSDStepMode
+MicroStep4	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep4   =   4,$/;"	m	class:HPSDStepMode
+MicroStep4	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep4   =   4,$/;"	m	class:HPSDStepMode
+MicroStep4	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep4   =   4,$/;"	m	class:HPSDStepMode
+MicroStep64	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep64  =  64,$/;"	m	class:HPSDStepMode
+MicroStep64	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep64  =  64,$/;"	m	class:HPSDStepMode
+MicroStep64	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep64  =  64,$/;"	m	class:HPSDStepMode
+MicroStep64	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep64  =  64,$/;"	m	class:HPSDStepMode
+MicroStep64	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep64  =  64,$/;"	m	class:HPSDStepMode
+MicroStep8	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep8   =   8,$/;"	m	class:HPSDStepMode
+MicroStep8	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep8   =   8,$/;"	m	class:HPSDStepMode
+MicroStep8	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep8   =   8,$/;"	m	class:HPSDStepMode
+MicroStep8	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep8   =   8,$/;"	m	class:HPSDStepMode
+MicroStep8	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  MicroStep8   =   8,$/;"	m	class:HPSDStepMode
+Mixed	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Mixed               = 0b011,$/;"	m	class:HPSDDecayMode
+Mixed	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Mixed               = 0b011,$/;"	m	class:HPSDDecayMode
+Mixed	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Mixed               = 0b011,$/;"	m	class:HPSDDecayMode
+Mixed	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Mixed               = 0b011,$/;"	m	class:HPSDDecayMode
+Mixed	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Mixed               = 0b011,$/;"	m	class:HPSDDecayMode
+OFF	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OFF    = 0x02,$/;"	m	class:HPSDRegAddr
+OFF	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OFF    = 0x02,$/;"	m	class:HPSDRegAddr
+OFF	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OFF    = 0x02,$/;"	m	class:HPSDRegAddr
+OFF	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OFF    = 0x02,$/;"	m	class:HPSDRegAddr
+OFF	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OFF    = 0x02,$/;"	m	class:HPSDRegAddr
+OTS	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OTS = 0,$/;"	m	class:HPSDStatusBit
+OTS	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OTS = 0,$/;"	m	class:HPSDStatusBit
+OTS	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OTS = 0,$/;"	m	class:HPSDStatusBit
+OTS	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OTS = 0,$/;"	m	class:HPSDStatusBit
+OTS	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  OTS = 0,$/;"	m	class:HPSDStatusBit
+PIN_ENC1A	src/util.h	/^const uint8_t PIN_ENC1A = 18;$/;"	v
+PIN_ENC1B	src/util.h	/^const uint8_t PIN_ENC1B = 19;$/;"	v
+PIN_ENC2A	src/util.h	/^const uint8_t PIN_ENC2A = 20;$/;"	v
+PIN_ENC2B	src/util.h	/^const uint8_t PIN_ENC2B = 21;$/;"	v
+PIN_ENC3A	src/util.h	/^const uint8_t PIN_ENC3A = 22;$/;"	v
+PIN_ENC3B	src/util.h	/^const uint8_t PIN_ENC3B = 23;$/;"	v
+PIN_LIM1	src/util.h	/^const uint8_t PIN_LIM1  = 17; \/\/ M1$/;"	v
+PIN_LIM2	src/util.h	/^const uint8_t PIN_LIM2  = 15; \/\/ M2$/;"	v
+PIN_LIM3	src/util.h	/^const uint8_t PIN_LIM3  = 16;$/;"	v
+PIN_M1_CS	src/util.h	/^const uint8_t PIN_M1_CS = 10; \/\/ M1$/;"	v
+PIN_M2_CS	src/util.h	/^const uint8_t PIN_M2_CS = 8; \/\/ M2$/;"	v
+PIN_M3_CS	src/util.h	/^const uint8_t PIN_M3_CS = 9;$/;"	v
+PIN_MISO	src/util.h	/^const uint8_t PIN_MISO = 12;$/;"	v
+PIN_MOSI	src/util.h	/^const uint8_t PIN_MOSI = 11;$/;"	v
+PIN_N_SLP	src/util.h	/^const uint8_t PIN_N_SLP = 6;$/;"	v
+PIN_RST	src/util.h	/^const uint8_t PIN_RST = 7;$/;"	v
+PIN_SCK	src/util.h	/^const uint8_t PIN_SCK = 14;$/;"	v
+Packet	lib/Share/src/SerialPacket.h	/^union Packet {$/;"	u	namespace:SerialUtils
+SER_BAUD_RATE	src/util.h	/^const uint32_t SER_BAUD_RATE = 115200;$/;"	v
+SPI_FREQ	src/util.h	/^const uint32_t SPI_FREQ = 500000;$/;"	v
+STALL	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STALL  = 0x05,$/;"	m	class:HPSDRegAddr
+STALL	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STALL  = 0x05,$/;"	m	class:HPSDRegAddr
+STALL	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STALL  = 0x05,$/;"	m	class:HPSDRegAddr
+STALL	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STALL  = 0x05,$/;"	m	class:HPSDRegAddr
+STALL	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STALL  = 0x05,$/;"	m	class:HPSDRegAddr
+STATUS	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STATUS = 0x07,$/;"	m	class:HPSDRegAddr
+STATUS	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STATUS = 0x07,$/;"	m	class:HPSDRegAddr
+STATUS	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STATUS = 0x07,$/;"	m	class:HPSDRegAddr
+STATUS	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STATUS = 0x07,$/;"	m	class:HPSDRegAddr
+STATUS	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STATUS = 0x07,$/;"	m	class:HPSDRegAddr
+STD	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STD = 6,$/;"	m	class:HPSDStatusBit
+STD	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STD = 6,$/;"	m	class:HPSDStatusBit
+STD	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STD = 6,$/;"	m	class:HPSDStatusBit
+STD	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STD = 6,$/;"	m	class:HPSDStatusBit
+STD	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STD = 6,$/;"	m	class:HPSDStatusBit
+STDLAT	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STDLAT = 7,$/;"	m	class:HPSDStatusBit
+STDLAT	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STDLAT = 7,$/;"	m	class:HPSDStatusBit
+STDLAT	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STDLAT = 7,$/;"	m	class:HPSDStatusBit
+STDLAT	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STDLAT = 7,$/;"	m	class:HPSDStatusBit
+STDLAT	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  STDLAT = 7,$/;"	m	class:HPSDStatusBit
+STD_LED	src/util.h	/^const uint8_t STD_LED = 13;$/;"	v
+STD_LED	test/SerialROS/main.cpp	6;"	d	file:
+STD_LED	test/interfaces/main.cpp	4;"	d	file:
+STEP_MODE	src/main.cpp	/^static const HPSDStepMode STEP_MODE = HPSDStepMode::MicroStep2;$/;"	v	file:
+SerialPort	src/main.cpp	/^    HardwareSerial& SerialPort = Serial1;$/;"	v
+SerialPort	src/main.cpp	/^    usb_serial_class& SerialPort = Serial;$/;"	v
+SerialUtils	lib/Share/src/SerialPacket.h	/^namespace SerialUtils {$/;"	n
+Slow	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Slow                = 0b000,$/;"	m	class:HPSDDecayMode
+Slow	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Slow                = 0b000,$/;"	m	class:HPSDDecayMode
+Slow	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Slow                = 0b000,$/;"	m	class:HPSDDecayMode
+Slow	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Slow                = 0b000,$/;"	m	class:HPSDDecayMode
+Slow	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  Slow                = 0b000,$/;"	m	class:HPSDDecayMode
+SlowIncAutoMixedDec	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncAutoMixedDec = 0b100,$/;"	m	class:HPSDDecayMode
+SlowIncAutoMixedDec	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncAutoMixedDec = 0b100,$/;"	m	class:HPSDDecayMode
+SlowIncAutoMixedDec	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncAutoMixedDec = 0b100,$/;"	m	class:HPSDDecayMode
+SlowIncAutoMixedDec	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncAutoMixedDec = 0b100,$/;"	m	class:HPSDDecayMode
+SlowIncAutoMixedDec	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncAutoMixedDec = 0b100,$/;"	m	class:HPSDDecayMode
+SlowIncMixedDec	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncMixedDec     = 0b001,$/;"	m	class:HPSDDecayMode
+SlowIncMixedDec	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncMixedDec     = 0b001,$/;"	m	class:HPSDDecayMode
+SlowIncMixedDec	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncMixedDec     = 0b001,$/;"	m	class:HPSDDecayMode
+SlowIncMixedDec	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncMixedDec     = 0b001,$/;"	m	class:HPSDDecayMode
+SlowIncMixedDec	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SlowIncMixedDec     = 0b001,$/;"	m	class:HPSDDecayMode
+StepperMotor	lib/StepperMotor/src/StepperMotor.cpp	/^StepperMotor::StepperMotor(uint8_t cs_pin,$/;"	f	class:StepperMotor
+StepperMotor	lib/StepperMotor/src/StepperMotor.h	/^class StepperMotor : public HighPowerStepperDriver {$/;"	c
+TORQUE	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  TORQUE = 0x01,$/;"	m	class:HPSDRegAddr
+TORQUE	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  TORQUE = 0x01,$/;"	m	class:HPSDRegAddr
+TORQUE	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  TORQUE = 0x01,$/;"	m	class:HPSDRegAddr
+TORQUE	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  TORQUE = 0x01,$/;"	m	class:HPSDRegAddr
+TORQUE	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  TORQUE = 0x01,$/;"	m	class:HPSDRegAddr
+UVLO	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  UVLO = 5,$/;"	m	class:HPSDStatusBit
+UVLO	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  UVLO = 5,$/;"	m	class:HPSDStatusBit
+UVLO	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  UVLO = 5,$/;"	m	class:HPSDStatusBit
+UVLO	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  UVLO = 5,$/;"	m	class:HPSDStatusBit
+UVLO	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  UVLO = 5,$/;"	m	class:HPSDStatusBit
+applySettings	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void applySettings()$/;"	f	class:HighPowerStepperDriver
+applySettings	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void applySettings()$/;"	f	class:HighPowerStepperDriver
+applySettings	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void applySettings()$/;"	f	class:HighPowerStepperDriver
+applySettings	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void applySettings()$/;"	f	class:HighPowerStepperDriver
+applySettings	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void applySettings()$/;"	f	class:HighPowerStepperDriver
+blank	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+blank	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+blank	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+blank	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+blank	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+blink	src/main.cpp	/^void blink() {$/;"	f
+blink	test/SerialROS/main.cpp	/^void blink() {$/;"	f
+blink	test/encoders/main.cpp	/^void blink() {$/;"	f
+blink	test/just_keep_swimming/main.cpp	/^void blink() {$/;"	f
+bytes	lib/Share/src/SerialPacket.h	/^    char bytes[sizeof(CmdMsg)];$/;"	m	union:SerialUtils::Packet
+calibrate	lib/StepperMotor/src/StepperMotor.cpp	/^void StepperMotor::calibrate(std::vector<StepperMotor*> mtrs) {$/;"	f	class:StepperMotor
+clearFaults	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearFaults()$/;"	f	class:HighPowerStepperDriver
+clearFaults	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearFaults()$/;"	f	class:HighPowerStepperDriver
+clearFaults	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearFaults()$/;"	f	class:HighPowerStepperDriver
+clearFaults	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearFaults()$/;"	f	class:HighPowerStepperDriver
+clearFaults	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearFaults()$/;"	f	class:HighPowerStepperDriver
+clearStatus	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearStatus()$/;"	f	class:HighPowerStepperDriver
+clearStatus	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearStatus()$/;"	f	class:HighPowerStepperDriver
+clearStatus	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearStatus()$/;"	f	class:HighPowerStepperDriver
+clearStatus	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearStatus()$/;"	f	class:HighPowerStepperDriver
+clearStatus	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void clearStatus()$/;"	f	class:HighPowerStepperDriver
+csPin	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t csPin;$/;"	m	class:DRV8711SPI
+csPin	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t csPin;$/;"	m	class:DRV8711SPI
+csPin	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t csPin;$/;"	m	class:DRV8711SPI
+csPin	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t csPin;$/;"	m	class:DRV8711SPI
+csPin	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t csPin;$/;"	m	class:DRV8711SPI
+cs_pin	test/interfaces/main.cpp	/^static const int cs_pin = 10;$/;"	v	file:
+ctrl	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+ctrl	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+ctrl	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+ctrl	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+ctrl	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+decay	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+decay	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+decay	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+decay	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+decay	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+deselectChip	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void deselectChip()$/;"	f	class:DRV8711SPI
+deselectChip	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void deselectChip()$/;"	f	class:DRV8711SPI
+deselectChip	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void deselectChip()$/;"	f	class:DRV8711SPI
+deselectChip	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void deselectChip()$/;"	f	class:DRV8711SPI
+deselectChip	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void deselectChip()$/;"	f	class:DRV8711SPI
+disableDriver	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void disableDriver()$/;"	f	class:HighPowerStepperDriver
+disableDriver	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void disableDriver()$/;"	f	class:HighPowerStepperDriver
+disableDriver	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void disableDriver()$/;"	f	class:HighPowerStepperDriver
+disableDriver	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void disableDriver()$/;"	f	class:HighPowerStepperDriver
+disableDriver	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void disableDriver()$/;"	f	class:HighPowerStepperDriver
+drive	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+drive	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+drive	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+drive	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+drive	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+driver	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRV8711SPI driver;$/;"	m	class:HighPowerStepperDriver
+driver	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRV8711SPI driver;$/;"	m	class:HighPowerStepperDriver
+driver	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRV8711SPI driver;$/;"	m	class:HighPowerStepperDriver
+driver	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRV8711SPI driver;$/;"	m	class:HighPowerStepperDriver
+driver	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  DRV8711SPI driver;$/;"	m	class:HighPowerStepperDriver
+enableDriver	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void enableDriver()$/;"	f	class:HighPowerStepperDriver
+enableDriver	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void enableDriver()$/;"	f	class:HighPowerStepperDriver
+enableDriver	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void enableDriver()$/;"	f	class:HighPowerStepperDriver
+enableDriver	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void enableDriver()$/;"	f	class:HighPowerStepperDriver
+enableDriver	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void enableDriver()$/;"	f	class:HighPowerStepperDriver
+enable_motor	test/interfaces/main.cpp	/^void enable_motor()$/;"	f
+enc_cpr	lib/StepperMotor/src/StepperMotor.h	/^    static const uint32_t enc_cpr = 1024;$/;"	m	class:StepperMotor
+enc_to_step	lib/StepperMotor/src/StepperMotor.h	/^    inline int16_t enc_to_step(int32_t enc_val) {$/;"	f	class:StepperMotor
+expected	test/SerialROS/main.cpp	/^SerialUtils::CmdMsg expected = {0, 180, 0, 0};$/;"	v
+forward_direction	lib/StepperMotor/src/StepperMotor.h	/^    static const bool forward_direction = 1;         \/\/ reference$/;"	m	class:StepperMotor
+full_steps_per_rev	lib/StepperMotor/src/StepperMotor.h	/^    static const uint16_t full_steps_per_rev = 200;  \/\/ 1.8 deg per step$/;"	m	class:StepperMotor
+getDirection	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool getDirection()$/;"	f	class:HighPowerStepperDriver
+getDirection	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool getDirection()$/;"	f	class:HighPowerStepperDriver
+getDirection	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool getDirection()$/;"	f	class:HighPowerStepperDriver
+getDirection	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool getDirection()$/;"	f	class:HighPowerStepperDriver
+getDirection	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool getDirection()$/;"	f	class:HighPowerStepperDriver
+get_char	src/main.cpp	/^int8_t get_char() {$/;"	f
+get_char	test/just_keep_swimming/main.cpp	/^int8_t get_char() {$/;"	f
+inc_steps	lib/StepperMotor/src/StepperMotor.cpp	/^bool StepperMotor::inc_steps() {$/;"	f	class:StepperMotor
+is_relative	lib/Share/src/SerialPacket.h	/^    bool is_relative;$/;"	m	struct:SerialUtils::CmdMsg
+itr_list	lib/StepperMotor/src/StepperMotor.cpp	/^std::vector<std::pair<uint8_t, StepperMotor*> > StepperMotor::itr_list =$/;"	m	class:StepperMotor	file:
+itr_list	lib/StepperMotor/src/StepperMotor.h	/^    static std::vector<std::pair<uint8_t, StepperMotor*> > itr_list;$/;"	m	class:StepperMotor
+limit_switch_isr	lib/StepperMotor/src/StepperMotor.cpp	/^void StepperMotor::limit_switch_isr(void) {$/;"	f	class:StepperMotor
+loop	src/main.cpp	/^void loop() {}$/;"	f
+loop	test/SerialROS/main.cpp	/^void loop() {}$/;"	f
+loop	test/encoders/main.cpp	/^void loop() {}$/;"	f
+loop	test/interfaces/main.cpp	/^void loop() {}$/;"	f
+loop	test/just_keep_swimming/main.cpp	/^void loop() {}$/;"	f
+loop	test/limit_switches/main.cpp	/^void loop() {}$/;"	f
+m1_angle	lib/Share/src/SerialPacket.h	/^    float m1_angle, m2_angle, m3_angle;$/;"	m	struct:SerialUtils::CmdMsg
+m2_angle	lib/Share/src/SerialPacket.h	/^    float m1_angle, m2_angle, m3_angle;$/;"	m	struct:SerialUtils::CmdMsg
+m3_angle	lib/Share/src/SerialPacket.h	/^    float m1_angle, m2_angle, m3_angle;$/;"	m	struct:SerialUtils::CmdMsg
+m_at_limit	lib/StepperMotor/src/StepperMotor.h	/^    bool m_at_limit;$/;"	m	class:StepperMotor
+m_deg_to_step	lib/StepperMotor/src/StepperMotor.h	/^    float m_deg_to_step;$/;"	m	class:StepperMotor
+m_enc	lib/StepperMotor/src/StepperMotor.h	/^    Encoder *m_enc;$/;"	m	class:StepperMotor
+m_last_step_us	lib/StepperMotor/src/StepperMotor.h	/^    uint32_t m_last_step_us;  \/\/ micros() from the last step$/;"	m	class:StepperMotor
+m_step_crnt	lib/StepperMotor/src/StepperMotor.h	/^    int16_t m_step_crnt;    \/\/ current step counter (rolls over)$/;"	m	class:StepperMotor
+m_step_target	lib/StepperMotor/src/StepperMotor.h	/^    int16_t m_step_target;  \/\/ target step$/;"	m	class:StepperMotor
+m_steps_per_rev	lib/StepperMotor/src/StepperMotor.h	/^    uint16_t m_steps_per_rev;  \/\/ based on step mode$/;"	m	class:StepperMotor
+main	test/SerialPacket/main.cpp	/^int main()$/;"	f
+max_angle_degrees	lib/StepperMotor/src/StepperMotor.h	/^    static const float max_angle_degrees = 80;  \/\/ as measured from the limit$/;"	m	class:StepperMotor
+motors_done	lib/Share/src/SerialPacket.h	/^    bool motors_done;$/;"	m	struct:SerialUtils::CmdMsg
+msg	lib/Share/src/SerialPacket.h	/^    CmdMsg msg;$/;"	m	union:SerialUtils::Packet
+off	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+off	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+off	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+off	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+off	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+operator std::string	lib/Share/src/SerialPacket.h	/^    operator std::string() const$/;"	f	struct:SerialUtils::CmdMsg
+pack	lib/Share/src/SerialPacket.h	/^inline void pack(std::vector<char> &dest, CmdMsg &src) {$/;"	f	namespace:SerialUtils
+readFaults	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readFaults()$/;"	f	class:HighPowerStepperDriver
+readFaults	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readFaults()$/;"	f	class:HighPowerStepperDriver
+readFaults	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readFaults()$/;"	f	class:HighPowerStepperDriver
+readFaults	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readFaults()$/;"	f	class:HighPowerStepperDriver
+readFaults	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readFaults()$/;"	f	class:HighPowerStepperDriver
+readReg	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(HPSDRegAddr address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(uint8_t address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(HPSDRegAddr address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(uint8_t address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(HPSDRegAddr address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(uint8_t address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(HPSDRegAddr address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(uint8_t address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(HPSDRegAddr address)$/;"	f	class:DRV8711SPI
+readReg	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t readReg(uint8_t address)$/;"	f	class:DRV8711SPI
+readStatus	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readStatus()$/;"	f	class:HighPowerStepperDriver
+readStatus	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readStatus()$/;"	f	class:HighPowerStepperDriver
+readStatus	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readStatus()$/;"	f	class:HighPowerStepperDriver
+readStatus	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readStatus()$/;"	f	class:HighPowerStepperDriver
+readStatus	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint8_t readStatus()$/;"	f	class:HighPowerStepperDriver
+read_reg	test/interfaces/main.cpp	/^uint16_t read_reg(uint8_t addr)$/;"	f
+resetSettings	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void resetSettings()$/;"	f	class:HighPowerStepperDriver
+resetSettings	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void resetSettings()$/;"	f	class:HighPowerStepperDriver
+resetSettings	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void resetSettings()$/;"	f	class:HighPowerStepperDriver
+resetSettings	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void resetSettings()$/;"	f	class:HighPowerStepperDriver
+resetSettings	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void resetSettings()$/;"	f	class:HighPowerStepperDriver
+selectChip	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void selectChip()$/;"	f	class:DRV8711SPI
+selectChip	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void selectChip()$/;"	f	class:DRV8711SPI
+selectChip	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void selectChip()$/;"	f	class:DRV8711SPI
+selectChip	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void selectChip()$/;"	f	class:DRV8711SPI
+selectChip	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void selectChip()$/;"	f	class:DRV8711SPI
+serial_setup	src/main.cpp	/^static inline void serial_setup()$/;"	f	file:
+serial_setup	test/SerialROS/main.cpp	/^void serial_setup() {$/;"	f
+serial_setup	test/encoders/main.cpp	/^static inline void serial_setup()$/;"	f	file:
+serial_setup	test/interfaces/main.cpp	/^void serial_setup()$/;"	f
+serial_setup	test/just_keep_swimming/main.cpp	/^static inline void serial_setup()$/;"	f	file:
+serial_setup	test/limit_switches/main.cpp	/^static inline void serial_setup()$/;"	f	file:
+setChipSelectPin	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:DRV8711SPI
+setChipSelectPin	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:HighPowerStepperDriver
+setChipSelectPin	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:DRV8711SPI
+setChipSelectPin	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:HighPowerStepperDriver
+setChipSelectPin	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:DRV8711SPI
+setChipSelectPin	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:HighPowerStepperDriver
+setChipSelectPin	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:DRV8711SPI
+setChipSelectPin	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:HighPowerStepperDriver
+setChipSelectPin	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:DRV8711SPI
+setChipSelectPin	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setChipSelectPin(uint8_t pin)$/;"	f	class:HighPowerStepperDriver
+setCurrentMilliamps36v4	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setCurrentMilliamps36v4(uint16_t current)$/;"	f	class:HighPowerStepperDriver
+setCurrentMilliamps36v4	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setCurrentMilliamps36v4(uint16_t current)$/;"	f	class:HighPowerStepperDriver
+setCurrentMilliamps36v4	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setCurrentMilliamps36v4(uint16_t current)$/;"	f	class:HighPowerStepperDriver
+setCurrentMilliamps36v4	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setCurrentMilliamps36v4(uint16_t current)$/;"	f	class:HighPowerStepperDriver
+setCurrentMilliamps36v4	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setCurrentMilliamps36v4(uint16_t current)$/;"	f	class:HighPowerStepperDriver
+setDecayMode	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDecayMode(HPSDDecayMode mode)$/;"	f	class:HighPowerStepperDriver
+setDecayMode	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDecayMode(HPSDDecayMode mode)$/;"	f	class:HighPowerStepperDriver
+setDecayMode	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDecayMode(HPSDDecayMode mode)$/;"	f	class:HighPowerStepperDriver
+setDecayMode	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDecayMode(HPSDDecayMode mode)$/;"	f	class:HighPowerStepperDriver
+setDecayMode	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDecayMode(HPSDDecayMode mode)$/;"	f	class:HighPowerStepperDriver
+setDirection	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDirection(bool value)$/;"	f	class:HighPowerStepperDriver
+setDirection	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDirection(bool value)$/;"	f	class:HighPowerStepperDriver
+setDirection	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDirection(bool value)$/;"	f	class:HighPowerStepperDriver
+setDirection	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDirection(bool value)$/;"	f	class:HighPowerStepperDriver
+setDirection	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setDirection(bool value)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(HPSDStepMode mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(uint16_t mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(HPSDStepMode mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(uint16_t mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(HPSDStepMode mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(uint16_t mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(HPSDStepMode mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(uint16_t mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(HPSDStepMode mode)$/;"	f	class:HighPowerStepperDriver
+setStepMode	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void setStepMode(uint16_t mode)$/;"	f	class:HighPowerStepperDriver
+set_angle	lib/StepperMotor/src/StepperMotor.cpp	/^bool StepperMotor::set_angle(float angle_degrees, bool absolute) {$/;"	f	class:StepperMotor
+set_torque_and_gain	test/interfaces/main.cpp	/^void set_torque_and_gain()$/;"	f
+settings	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	m	class:DRV8711SPI
+settings	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	m	class:DRV8711SPI
+settings	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	m	class:DRV8711SPI
+settings	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	m	class:DRV8711SPI
+settings	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	m	class:DRV8711SPI
+settings	test/interfaces/main.cpp	/^SPISettings settings = SPISettings(500000, MSBFIRST, SPI_MODE0);$/;"	v
+setup	src/main.cpp	/^void setup() $/;"	f
+setup	test/SerialROS/main.cpp	/^void setup() {$/;"	f
+setup	test/encoders/main.cpp	/^void setup() $/;"	f
+setup	test/interfaces/main.cpp	/^void setup() $/;"	f
+setup	test/just_keep_swimming/main.cpp	/^void setup() $/;"	f
+setup	test/limit_switches/main.cpp	/^void setup() $/;"	f
+spi_setup	src/main.cpp	/^static inline void spi_setup()$/;"	f	file:
+spi_setup	test/interfaces/main.cpp	/^void spi_setup()$/;"	f
+spi_setup	test/just_keep_swimming/main.cpp	/^static inline void spi_setup()$/;"	f	file:
+spi_write	test/interfaces/main.cpp	/^void spi_write(int addr, int val)$/;"	f
+stall	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+stall	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+stall	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+stall	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+stall	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+step	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void step()$/;"	f	class:HighPowerStepperDriver
+step	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void step()$/;"	f	class:HighPowerStepperDriver
+step	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void step()$/;"	f	class:HighPowerStepperDriver
+step	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void step()$/;"	f	class:HighPowerStepperDriver
+step	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void step()$/;"	f	class:HighPowerStepperDriver
+step	test/interfaces/main.cpp	/^void step()$/;"	f
+step_period_us	lib/StepperMotor/src/StepperMotor.h	/^    static const uint32_t step_period_us = 20000;     \/\/ step_period_us$/;"	m	class:StepperMotor
+step_period_us	test/interfaces/main.cpp	/^static const int step_period_us = 2000;$/;"	v	file:
+test_serialization	test/SerialPacket/main.cpp	/^void test_serialization(void) {$/;"	f
+torque	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+torque	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+torque	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+torque	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+torque	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t ctrl, torque, off, blank, decay, stall, drive;$/;"	m	class:HighPowerStepperDriver
+transfer	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t transfer(uint16_t value)$/;"	f	class:DRV8711SPI
+transfer	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t transfer(uint16_t value)$/;"	f	class:DRV8711SPI
+transfer	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t transfer(uint16_t value)$/;"	f	class:DRV8711SPI
+transfer	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t transfer(uint16_t value)$/;"	f	class:DRV8711SPI
+transfer	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  uint16_t transfer(uint16_t value)$/;"	f	class:DRV8711SPI
+unpack	lib/Share/src/SerialPacket.h	/^inline void unpack(std::vector<char> &src, CmdMsg &dest) {$/;"	f	namespace:SerialUtils
+unpack	lib/Share/src/SerialPacket.h	/^inline void unpack(std::vector<char>::iterator start,$/;"	f	namespace:SerialUtils
+update_step_count	lib/StepperMotor/src/StepperMotor.cpp	/^void StepperMotor::update_step_count() {$/;"	f	class:StepperMotor
+verifySettings	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool verifySettings()$/;"	f	class:HighPowerStepperDriver
+verifySettings	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool verifySettings()$/;"	f	class:HighPowerStepperDriver
+verifySettings	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool verifySettings()$/;"	f	class:HighPowerStepperDriver
+verifySettings	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool verifySettings()$/;"	f	class:HighPowerStepperDriver
+verifySettings	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  bool verifySettings()$/;"	f	class:HighPowerStepperDriver
+writeBLANK	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeBLANK()$/;"	f	class:HighPowerStepperDriver
+writeBLANK	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeBLANK()$/;"	f	class:HighPowerStepperDriver
+writeBLANK	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeBLANK()$/;"	f	class:HighPowerStepperDriver
+writeBLANK	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeBLANK()$/;"	f	class:HighPowerStepperDriver
+writeBLANK	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeBLANK()$/;"	f	class:HighPowerStepperDriver
+writeCTRL	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeCTRL()$/;"	f	class:HighPowerStepperDriver
+writeCTRL	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeCTRL()$/;"	f	class:HighPowerStepperDriver
+writeCTRL	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeCTRL()$/;"	f	class:HighPowerStepperDriver
+writeCTRL	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeCTRL()$/;"	f	class:HighPowerStepperDriver
+writeCTRL	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeCTRL()$/;"	f	class:HighPowerStepperDriver
+writeDECAY	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDECAY()$/;"	f	class:HighPowerStepperDriver
+writeDECAY	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDECAY()$/;"	f	class:HighPowerStepperDriver
+writeDECAY	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDECAY()$/;"	f	class:HighPowerStepperDriver
+writeDECAY	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDECAY()$/;"	f	class:HighPowerStepperDriver
+writeDECAY	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDECAY()$/;"	f	class:HighPowerStepperDriver
+writeDRIVE	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDRIVE()$/;"	f	class:HighPowerStepperDriver
+writeDRIVE	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDRIVE()$/;"	f	class:HighPowerStepperDriver
+writeDRIVE	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDRIVE()$/;"	f	class:HighPowerStepperDriver
+writeDRIVE	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDRIVE()$/;"	f	class:HighPowerStepperDriver
+writeDRIVE	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeDRIVE()$/;"	f	class:HighPowerStepperDriver
+writeOFF	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeOFF()$/;"	f	class:HighPowerStepperDriver
+writeOFF	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeOFF()$/;"	f	class:HighPowerStepperDriver
+writeOFF	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeOFF()$/;"	f	class:HighPowerStepperDriver
+writeOFF	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeOFF()$/;"	f	class:HighPowerStepperDriver
+writeOFF	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeOFF()$/;"	f	class:HighPowerStepperDriver
+writeReg	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(HPSDRegAddr address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(uint8_t address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(HPSDRegAddr address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(uint8_t address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(HPSDRegAddr address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(uint8_t address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(HPSDRegAddr address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(uint8_t address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(HPSDRegAddr address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeReg	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeReg(uint8_t address, uint16_t value)$/;"	f	class:DRV8711SPI
+writeSTALL	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeSTALL()$/;"	f	class:HighPowerStepperDriver
+writeSTALL	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeSTALL()$/;"	f	class:HighPowerStepperDriver
+writeSTALL	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeSTALL()$/;"	f	class:HighPowerStepperDriver
+writeSTALL	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeSTALL()$/;"	f	class:HighPowerStepperDriver
+writeSTALL	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeSTALL()$/;"	f	class:HighPowerStepperDriver
+writeTORQUE	.pio/libdeps/Current_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeTORQUE()$/;"	f	class:HighPowerStepperDriver
+writeTORQUE	.pio/libdeps/StepperMotor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeTORQUE()$/;"	f	class:HighPowerStepperDriver
+writeTORQUE	.pio/libdeps/just_keep_swimming/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeTORQUE()$/;"	f	class:HighPowerStepperDriver
+writeTORQUE	.pio/libdeps/motor_testing/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeTORQUE()$/;"	f	class:HighPowerStepperDriver
+writeTORQUE	.pio/libdeps/teensy31/HighPowerStepperDriver_ID6456/HighPowerStepperDriver.h	/^  void writeTORQUE()$/;"	f	class:HighPowerStepperDriver
+write_reg	test/interfaces/main.cpp	/^void write_reg(uint8_t addr, uint16_t val)$/;"	f
+~StepperMotor	lib/StepperMotor/src/StepperMotor.cpp	/^StepperMotor::~StepperMotor() {$/;"	f	class:StepperMotor
