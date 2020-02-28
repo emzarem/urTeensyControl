@@ -8,7 +8,7 @@
 /* Forward Declarations */
 
 /* Class to Control Stepper Motors -- Uses AccelStepper */
-class AccelMotor : protected AccelStepper {
+class AccelMotor : public AccelStepper {
 public:
     AccelMotor(uint8_t cs_pin,
                uint8_t lim_pin,
@@ -22,16 +22,16 @@ public:
 
     bool set_angle(float angle_degrees, bool absolute);  // set the angle
 
+    // Overrides
+    void step(long step) override;
+
+
     static void calibrate(
         std::vector<AccelMotor *> mts);  // step until limit hit
 
     static const float max_angle_degrees = 90;  // as measured from the limit
 
 private:
-    /* Stepping */
-    void forward();
-    void backward();
-
     /* Static functions */
     static void limit_switch_isr(void);
 

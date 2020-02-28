@@ -3,10 +3,11 @@
 #include "util.h"
 
 #include <Arduino.h>
+#include <MultiStepper.h>
 #include <SPI.h>
 #include <vector>
 
-#define USE_USB
+//#define USE_USB
 
 #ifdef USE_USB
     usb_serial_class& SerialPort = Serial;
@@ -72,27 +73,30 @@ void setup()
 //    motors.push_back(&sm2);
 //    motors.push_back(&sm3);
 
-    for (auto &mtr : motors)
-        mtr.setAcceleration
-
-    AccelMotor::calibrate(motors);
+    for (auto mtr : motors) {
+        mtr->setAcceleration(30);
+        mtr->setSpeed(50);
+    }
     
     serial_setup();
     delay(1000);
 
+    AccelMotor::calibrate(motors);
+    
     bool msg_sent = false;
 
     while(1) {
-        for (auto &mtr : motors)
-            mtr.set_angle(80, 1);
+        for (auto mtr : motors)
+            mtr->set_angle(80, 1);
 
-        while(sm1.run()) {};
+        sm1.move(100);
+        sm1.runToPosition();
 
         blink();
         delay(1000);
   
         for (auto &mtr : motors)
-            mtr.set_angle(0, 1);
+            mtr->set_angle(0, 1);
 
         while(sm1.run()) {};
 

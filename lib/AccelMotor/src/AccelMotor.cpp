@@ -13,12 +13,15 @@ std::vector<std::pair<uint8_t, AccelMotor *> > AccelMotor::itr_list =
  */
 void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
     bool done = false;
-    
+
+    for (auto &mtr : mtrs)
+        mtr->_direction = DIRECTION_CCW;
+
     while (!done) {
         done = true;
         for (AccelMotor *mtr : mtrs) {
             if (!mtr->m_at_limit)
-                mtr->backward();
+                mtr->step(0);
             done &= mtr->m_at_limit;
         }
         delayMicroseconds(20000);
@@ -42,11 +45,7 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
                            uint16_t current_lim_mA,
                            HPSDStepMode step_mode,
                            bool use_enc)
-    : AccelStepper(&AccelMotor::forward, &AccelMotor::backward);
-      m_last_step_us(0),
-      m_step_target(0),
-      m_step_crnt(0),
-      m_step_bkup(0),
+    : AccelStepper(AccelStepper::FUNCTION),
       m_at_limit(false),
       m_no_enc(!use_enc) {
     
@@ -110,29 +109,19 @@ bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
     return success;
 }
 
-/* Function: <forward>
+
+/* Function: <name>
  * Inputs:
  *              None
  * Outputs:
  *              None
  */
-void forward() {
-    if (m_hpsd->getDirection() != DIRECTION_CW)
-        m_hpsd->setDirection(DIRECTION_CW);
+void AccelMotor::step(long step) {
+    if (m_hpsd->getDirection() != _direction)
+        m_hpsd->setDirection(_direction);
     m_hpsd->step();
 }
 
-/* Function: <backward>
- * Inputs:
- *              None
- * Outputs:
- *              None
- */
-void backward() {
-    if (m_hpsd->getDirection() != DIRECTION_CCW)
-        m_hpsd->setDirection(DIRECTION_CCW);
-    m_hpsd->step();
-}
 
 /* Function: <limit_switch_isr>
  * Inputs:
@@ -145,7 +134,7 @@ void AccelMotor::limit_switch_isr(void) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             mtr.second->setCurrentPosition(0);
-            mtr.second->m_enc->write(0);
+//            mtr.second->m_enc->write(0);
         } else {
             mtr.second->m_at_limit = false;
         }
