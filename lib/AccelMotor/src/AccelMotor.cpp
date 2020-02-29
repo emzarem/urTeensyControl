@@ -7,21 +7,19 @@ std::vector<std::pair<uint8_t, AccelMotor *> > AccelMotor::itr_list =
 
 /* Function: calibrate
  * Inputs:
- *              None
+ *              mtrs - vector of motors to calibrate
  * Outputs:
  *              None
  */
 void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
     bool done = false;
 
-    for (auto &mtr : mtrs)
-        mtr->_direction = DIRECTION_CCW;
+    for (auto &mtr : mtrs) mtr->_direction = DIRECTION_CCW;
 
     while (!done) {
         done = true;
         for (AccelMotor *mtr : mtrs) {
-            if (!mtr->m_at_limit)
-                mtr->step(0);
+            if (!mtr->m_at_limit) mtr->step(0);
             done &= mtr->m_at_limit;
         }
         delayMicroseconds(20000);
@@ -38,17 +36,16 @@ void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
  *              None
  */
 AccelMotor::AccelMotor(uint8_t cs_pin,
-                           uint8_t lim_pin,
-                           uint8_t encA_pin,
-                           uint8_t encB_pin,
-                           HPSDDecayMode decay_mode,
-                           uint16_t current_lim_mA,
-                           HPSDStepMode step_mode,
-                           bool use_enc)
+                       uint8_t lim_pin,
+                       uint8_t encA_pin,
+                       uint8_t encB_pin,
+                       HPSDDecayMode decay_mode,
+                       uint16_t current_lim_mA,
+                       HPSDStepMode step_mode,
+                       bool use_enc)
     : AccelStepper(AccelStepper::FUNCTION),
       m_at_limit(false),
       m_no_enc(!use_enc) {
-    
     // Setup stepper
     m_hpsd = new HighPowerStepperDriver();
     m_hpsd->setChipSelectPin(cs_pin);
@@ -101,7 +98,7 @@ bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
 
     int16_t new_step_target =
         (int16_t)(angle_degrees * m_deg_to_step) % m_steps_per_rev;
-    
+
     if (absolute)
         moveTo(new_step_target);
     else
@@ -110,15 +107,14 @@ bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
 }
 
 
-/* Function: <name>
+/* Function: <step>
  * Inputs:
- *              None
+ *              long - unused here (for compatibility)
  * Outputs:
  *              None
  */
-void AccelMotor::step(long step) {
-    if (m_hpsd->getDirection() != _direction)
-        m_hpsd->setDirection(_direction);
+void AccelMotor::step(long) {
+    if (m_hpsd->getDirection() != _direction) m_hpsd->setDirection(_direction);
     m_hpsd->step();
 }
 
@@ -134,7 +130,7 @@ void AccelMotor::limit_switch_isr(void) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             mtr.second->setCurrentPosition(0);
-//            mtr.second->m_enc->write(0);
+            //            mtr.second->m_enc->write(0);
         } else {
             mtr.second->m_at_limit = false;
         }

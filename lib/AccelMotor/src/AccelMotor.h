@@ -1,3 +1,15 @@
+/* AccelMotor.h
+ *      This file contains the definition for the AccelMotor class
+ *
+ *      This class extends the AirSpayce AccelStepper class by
+ *      overriding the step function.
+ *
+ *      Inherited functions of note:
+ *              void setSpeed(float)         - step/s
+ *              void setAcceleration(float)  - step/s^2
+ *              bool run()                   - 1 step, false if done
+ */
+
 #pragma once
 
 #include <AccelStepper.h>
@@ -22,9 +34,7 @@ public:
 
     bool set_angle(float angle_degrees, bool absolute);  // set the angle
 
-    // Overrides
-    void step(long step) override;
-
+    void step(long) override;  // from accelstepper
 
     static void calibrate(
         std::vector<AccelMotor *> mts);  // step until limit hit
@@ -50,5 +60,5 @@ private:
     static std::vector<std::pair<uint8_t, AccelMotor *> > itr_list;
 
     static const uint16_t full_steps_per_rev = 200;  // 1.8 deg per step
-    static const int16_t step_tol = 5;  // How close to target
+    static const int16_t step_tol = 5;               // How close to target
 };
