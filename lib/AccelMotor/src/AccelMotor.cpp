@@ -22,7 +22,7 @@ void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
             if (!mtr->m_at_limit) mtr->step(0);
             done &= mtr->m_at_limit;
         }
-        delayMicroseconds(20000);
+        delayMicroseconds(625);
     }
 }
 
@@ -129,7 +129,9 @@ void AccelMotor::limit_switch_isr(void) {
     for (auto &mtr : itr_list) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
+            long tmp = mtr.second->targetPosition();
             mtr.second->setCurrentPosition(0);
+            mtr.second->moveTo(tmp);
             //            mtr.second->m_enc->write(0);
         } else {
             mtr.second->m_at_limit = false;
