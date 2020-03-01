@@ -17,7 +17,10 @@ long AccelMotor::calibrate_time_us = 0;
 void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
     bool done = false;
 
-    for (auto &mtr : mtrs) mtr->_direction = DIRECTION_CCW;
+    for (auto &mtr : mtrs) {
+        mtr->moveTo(0);
+        mtr->_direction = DIRECTION_CCW;
+    }
 
     while (!done) {
         done = true;
@@ -65,10 +68,12 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
     m_steps_per_rev = (uint16_t)step_mode * full_steps_per_rev;
     m_deg_to_step = (float)m_steps_per_rev / 360;
 
-    long cal_time_us = 40000/(uint16_t)step_mode; // do a (full) step period of 40000 during cal
+    long cal_time_us =
+        40000 /
+        (uint16_t)step_mode;  // do a (full) step period of 40000 during cal
     if (AccelMotor::calibrate_time_us < cal_time_us)
         AccelMotor::calibrate_time_us = cal_time_us;
-    
+
     // Setup encoder
     m_enc = new Encoder(encA_pin, encB_pin);
     m_enc->write(-1 * enc_cpr);  // -1 because encoder counts in opposite
@@ -141,12 +146,13 @@ bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
 long AccelMotor::distanceToGo() {
     long current_steps = currentPosition();
     if (!m_no_enc)
-        current_steps = (int16_t)(AccelMotor::step_weight * current_steps  +
-                        AccelMotor::enc_weight * enc_to_step(m_enc->read()));
-    
+        current_steps =
+            (int16_t)(AccelMotor::step_weight * current_steps +
+                      AccelMotor::enc_weight * enc_to_step(m_enc->read()));
+
     long delta = targetPosition() - current_steps;
 
-    return abs(delta) < step_tol ? 0 : delta; // round down if necessary
+    return abs(delta) < step_tol ? 0 : delta;  // round down if necessary
 }
 
 /* Function: <run>

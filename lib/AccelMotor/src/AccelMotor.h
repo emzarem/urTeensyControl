@@ -34,13 +34,14 @@ public:
                bool use_enc = false);  // Constructor
     ~AccelMotor();                     // Destructor
 
-    void set_max_angle(float angle_degrees); // set limit
+    void set_max_angle(float angle_degrees);             // set limit
     bool set_angle(float angle_degrees, bool absolute);  // set the angle
 
     void step(long) override;  // from accelstepper
-    long distanceToGo(); // from accelstepper
-    bool run(); // from accelstepper
-    bool runSpeedToPosition() = delete; // from accelstepper -- encoder override breaks this
+    long distanceToGo();       // from accelstepper
+    bool run();                // from accelstepper
+    bool runSpeedToPosition() =
+        delete;  // from accelstepper -- encoder override breaks this
 
     static void calibrate(
         std::vector<AccelMotor *> mts);  // step until limit hit
@@ -80,5 +81,4 @@ private:
     // Weightings
     static const float step_weight = 0.5;
     static const float enc_weight = 0.5;
-
 };
