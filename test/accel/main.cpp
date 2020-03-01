@@ -7,7 +7,7 @@
 #include <SPI.h>
 #include <vector>
 
-#define USE_USB
+//#define USE_USB
 
 #ifdef USE_USB
     usb_serial_class& SerialPort = Serial;
@@ -57,9 +57,9 @@ void setup()
     delay(1000);
 
     // Setup Motors
-    AccelMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
-    AccelMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
-    AccelMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
+    AccelMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
+    AccelMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
+    AccelMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
     
     std::vector<AccelMotor*> motors;
     motors.push_back(&sm1);
@@ -95,6 +95,40 @@ void setup()
     // Now calibrate everything
     AccelMotor::calibrate(motors);
     
+    int pos[5][3] = {{20,20,35}, {20,35,20}, {35,20,20}, {0,0,0}};
+    int i = 0;
+
+    while(1) {
+        for (int j = 0; j < 3; j++)
+            motors[j]->set_angle(pos[i][j], 1);
+        bool done;
+        do {
+            done = true;
+            for (auto mtr : motors)
+                done &= !mtr->run();
+        } while(!done);
+        blink();
+        delay(500);
+        i = (i+1)%5;
+        //while(!sm1.run());
+
+//        do {
+//            for (auto mtr : motors)
+//                done &= !sm1.run();
+//        } while(!done);
+//        blink();
+//        delay(1000);
+//        for (auto mtr : motors)
+//            mtr->set_angle(0, 1);
+//        done = true;
+//        do {
+//            for (auto mtr : motors)
+//                done &= !sm1.run();
+//        } while(!done);
+//        sm1.runToPosition();
+
+    }
+
     while(1) {
         if (SerialPort.available() > 0) {
             uint8_t next_byte = SerialPort.read();
