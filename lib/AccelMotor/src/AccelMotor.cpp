@@ -5,6 +5,8 @@
 std::vector<std::pair<uint8_t, AccelMotor *> > AccelMotor::itr_list =
     std::vector<std::pair<uint8_t, AccelMotor *> >();
 
+long AccelMotor::calibrate_time_us = 0;
+
 /* Function: calibrate
  * Inputs:
  *              mtrs - vector of motors to calibrate
@@ -22,7 +24,7 @@ void AccelMotor::calibrate(std::vector<AccelMotor *> mtrs) {
             if (!mtr->m_at_limit) mtr->step(0);
             done &= mtr->m_at_limit;
         }
-        delayMicroseconds(625);
+        delayMicroseconds(calibrate_time_us);
     }
 }
 
@@ -39,12 +41,14 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
                        uint8_t lim_pin,
                        uint8_t encA_pin,
                        uint8_t encB_pin,
+                       uint16_t full_steps_per_rev,
                        HPSDDecayMode decay_mode,
                        uint16_t current_lim_mA,
                        HPSDStepMode step_mode,
                        bool use_enc)
     : AccelStepper(AccelStepper::FUNCTION),
       m_at_limit(false),
+      m_max_angle_deg(90),
       m_no_enc(!use_enc) {
     // Setup stepper
     m_hpsd = new HighPowerStepperDriver();
@@ -57,8 +61,12 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
     m_hpsd->enableDriver();
 
     // Get steps per rev
-    m_steps_per_rev = (uint16_t)step_mode * AccelMotor::full_steps_per_rev;
+    m_steps_per_rev = (uint16_t)step_mode * full_steps_per_rev;
     m_deg_to_step = (float)m_steps_per_rev / 360;
+
+    long cal_time_us = 40000/(uint16_t)step_mode; // do a (full) step period of 40000 during cal
+    if (AccelMotor::calibrate_time_us < cal_time_us)
+        AccelMotor::calibrate_time_us = cal_time_us;
 
     // Setup interrupts
     pinMode(lim_pin, INPUT);
@@ -78,6 +86,16 @@ AccelMotor::~AccelMotor() {
     delete m_hpsd;
 }
 
+/* Function: <set_max_angle>
+ * Inputs:
+ *              angle - angle to limit
+ * Outputs:
+ *              None
+ */
+void AccelMotor::set_max_angle(float angle) {
+    m_max_angle_deg = angle;
+}
+
 /* Function: <set_angle>
  * Inputs:
  *              angle_degrees - angle to move to (degrees)
@@ -88,8 +106,8 @@ AccelMotor::~AccelMotor() {
 bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
     bool success = true;
 
-    if (angle_degrees > max_angle_degrees) {
-        angle_degrees = max_angle_degrees;
+    if (angle_degrees > m_max_angle_deg) {
+        angle_degrees = m_max_angle_deg;
         success = false;
     } else if (angle_degrees < 0) {
         angle_degrees = 0;

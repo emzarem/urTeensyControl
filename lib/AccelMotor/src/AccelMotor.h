@@ -26,12 +26,14 @@ public:
                uint8_t lim_pin,
                uint8_t encA_pin,
                uint8_t encB_pin,
+               uint16_t full_steps_per_rev,
                HPSDDecayMode mode = HPSDDecayMode::AutoMixed,
                uint16_t current_lim_mA = 1000,
                HPSDStepMode step_mode = HPSDStepMode::MicroStep1,
                bool use_enc = false);  // Constructor
     ~AccelMotor();                     // Destructor
 
+    void set_max_angle(float angle_degrees); // set limit
     bool set_angle(float angle_degrees, bool absolute);  // set the angle
 
     void step(long) override;  // from accelstepper
@@ -39,14 +41,15 @@ public:
     static void calibrate(
         std::vector<AccelMotor *> mts);  // step until limit hit
 
-    static const float max_angle_degrees = 90;  // as measured from the limit
-
 private:
     /* Static functions */
     static void limit_switch_isr(void);
 
     /* Members */
     HighPowerStepperDriver *m_hpsd;
+
+    // Limits
+    float m_max_angle_deg;
 
     // Relationships / Ratios
     uint16_t m_steps_per_rev;  // based on step mode
@@ -58,7 +61,5 @@ private:
 
     /* Static Members */
     static std::vector<std::pair<uint8_t, AccelMotor *> > itr_list;
-
-    static const uint16_t full_steps_per_rev = 200;  // 1.8 deg per step
-    static const int16_t step_tol = 5;               // How close to target
+    static long calibrate_time_us;
 };
