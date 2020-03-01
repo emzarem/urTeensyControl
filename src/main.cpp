@@ -7,7 +7,7 @@
 #include <SPI.h>
 #include <vector>
 
-#define USE_USB
+//#define USE_USB
 
 #ifdef USE_USB
     usb_serial_class& SerialPort = Serial;
