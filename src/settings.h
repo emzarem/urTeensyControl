@@ -1,6 +1,8 @@
 #pragma once
 
 /* Motor Settings */
+const bool USE_ENC = false;
+
 const uint32_t CURRENT_LIMIT_MA = 2500;
 
 // 1,2,4,8,16...,256

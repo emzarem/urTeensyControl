@@ -1,6 +1,7 @@
 #include "AccelMotor.h"
 
 #include <Arduino.h>
+#include <Encoder.h>
 
 std::vector<std::pair<uint8_t, AccelMotor *> > AccelMotor::itr_list =
     std::vector<std::pair<uint8_t, AccelMotor *> >();
@@ -67,6 +68,11 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
     long cal_time_us = 40000/(uint16_t)step_mode; // do a (full) step period of 40000 during cal
     if (AccelMotor::calibrate_time_us < cal_time_us)
         AccelMotor::calibrate_time_us = cal_time_us;
+    
+    // Setup encoder
+    m_enc = new Encoder(encA_pin, encB_pin);
+    m_enc->write(-1 * enc_cpr);  // -1 because encoder counts in opposite
+                                 // direction to our convention
 
     // Setup interrupts
     pinMode(lim_pin, INPUT);
@@ -84,6 +90,7 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
  */
 AccelMotor::~AccelMotor() {
     delete m_hpsd;
+    delete m_enc;
 }
 
 /* Function: <set_max_angle>
@@ -125,6 +132,35 @@ bool AccelMotor::set_angle(float angle_degrees, bool absolute) {
 }
 
 
+/* Function: <distanceToGo>
+ * Inputs:
+ *              None
+ * Outputs:
+ *              long - delta between target and current (Steps)
+ */
+long AccelMotor::distanceToGo() {
+    long current_steps = currentPosition();
+    if (!m_no_enc)
+        current_steps = (int16_t)(AccelMotor::step_weight * current_steps  +
+                        AccelMotor::enc_weight * enc_to_step(m_enc->read()));
+    
+    long delta = targetPosition() - current_steps;
+
+    return abs(delta) < step_tol ? 0 : delta; // round down if necessary
+}
+
+/* Function: <run>
+ * Inputs:
+ *              None
+ * Outputs:
+ *              true if still running (a step was made)
+ */
+bool AccelMotor::run() {
+    computeNewSpeed();
+    runSpeed();
+    return speed() != 0 || distanceToGo() != 0;
+}
+
 /* Function: <step>
  * Inputs:
  *              long - unused here (for compatibility)
@@ -148,9 +184,9 @@ void AccelMotor::limit_switch_isr(void) {
         if (digitalRead(mtr.first) == HIGH) {
             mtr.second->m_at_limit = true;
             long tmp = mtr.second->targetPosition();
+            mtr.second->m_enc->write(0);
             mtr.second->setCurrentPosition(0);
             mtr.second->moveTo(tmp);
-            //            mtr.second->m_enc->write(0);
         } else {
             mtr.second->m_at_limit = false;
         }
