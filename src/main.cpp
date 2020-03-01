@@ -1,5 +1,6 @@
 #include "SerialPacket.h"
-#include "StepperMotor.h"
+#include "AccelMotor.h"
+#include "settings.h"
 #include "util.h"
 
 #include <Arduino.h>
@@ -13,9 +14,6 @@
 #else
     HardwareSerial& SerialPort = Serial1;
 #endif
-
-static const int CURRENT_LIMIT = 2500;
-static const HPSDStepMode STEP_MODE = HPSDStepMode::MicroStep2;
 
 static inline void spi_setup()
 {
@@ -45,15 +43,39 @@ void blink() {
     digitalWrite(STD_LED, 1);
 }
 
+static float inline deg_to_step(float deg) {
+    return (deg/360.0)*STEPS_PER_REV*STEP_MODE;
+}
+
 void setup() 
 {
+    // Setup comms first
     spi_setup();
     delay(1000);
+    
+    serial_setup();
+    delay(1000);
 
-    StepperMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
-    StepperMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
-    StepperMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, HPSDDecayMode::AutoMixed, CURRENT_LIMIT, STEP_MODE);
+    // Setup Motors
+    AccelMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
+    AccelMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
+    AccelMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE));
+    
+    std::vector<AccelMotor*> motors;
+    motors.push_back(&sm1);
+    motors.push_back(&sm2);
+    motors.push_back(&sm3);
 
+    float max_speed = deg_to_step(MAX_SPEED_DEG_S);
+    float accel = deg_to_step(ACCEL_DEG_S_S);
+
+    for (auto mtr : motors) {
+        mtr->set_max_angle(MAX_ANGLE_DEG);
+        mtr->setAcceleration(accel);
+        mtr->setMaxSpeed(max_speed);
+    }
+
+    // Bring out of sleep
     pinMode(PIN_N_SLP, OUTPUT);
     pinMode(PIN_RST, OUTPUT);
     digitalWrite(PIN_N_SLP, 1);
@@ -61,24 +83,18 @@ void setup()
 
     delay(1);
     
+    // Show alive
     pinMode(STD_LED, OUTPUT);
     digitalWrite(STD_LED, 1);
 
+    // For serial comms
+    bool msg_sent = false;
     std::vector<char> bytes;
     SerialUtils::CmdMsg *p_rx_msg = NULL;
 
-    std::vector<StepperMotor*> motors;
-    motors.push_back(&sm1);
-    motors.push_back(&sm2);
-    motors.push_back(&sm3);
-
-    StepperMotor::calibrate(motors);
+    // Now calibrate everything
+    AccelMotor::calibrate(motors);
     
-    serial_setup();
-    delay(1000);
-
-    bool msg_sent = false;
-
     while(1) {
         if (SerialPort.available() > 0) {
             uint8_t next_byte = SerialPort.read();
@@ -97,7 +113,7 @@ void setup()
                 0 == p_rx_msg->m2_angle &&
                 0 == p_rx_msg->m3_angle)
             {
-                StepperMotor::calibrate(motors);
+                AccelMotor::calibrate(motors);
             }
             else
             {
@@ -112,7 +128,7 @@ void setup()
        
         bool done = true;
         for (auto& mtr : motors)
-            done &= mtr->inc_steps();
+            done &= !mtr->run();
 
         // Let the controller know if movement completed
         if (done && !msg_sent) {
