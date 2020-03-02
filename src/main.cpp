@@ -156,6 +156,13 @@ void setup() {
                 case SerialUtils::CMDTYPE_ENDEFF_OFF:
                     end_eff_on(false);
                     break;
+
+                case SerialUtils::CMDTYPE_CONFIG:
+                    for (auto mtr : motors) {
+                        if (p_rx_msg->mtr_accel_deg_s_s) mtr->setAcceleration(deg_to_step(p_rx_msg->mtr_accel_deg_s_s));
+                        if (p_rx_msg->mtr_speed_deg_s) mtr->setMaxSpeed(deg_to_step(p_rx_msg->mtr_speed_deg_s));
+                    }
+                    break;
             }
 
             response = *p_rx_msg;
