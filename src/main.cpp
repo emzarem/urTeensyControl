@@ -121,6 +121,7 @@ void setup() {
 
     // Now calibrate everything
     AccelMotor::calibrate(motors);
+    bool running_mtrs = false;
 
     while (1) {
         if (SerialPort.available() > 0) {
@@ -134,30 +135,25 @@ void setup() {
             }
         }
 
-        bool done = true;
-        for (auto& mtr : motors) done &= !mtr->run();
-
         if (p_rx_msg) {
             switch (p_rx_msg->cmd_type) {
                 case SerialUtils::CMDTYPE_MTRS:
                     for (int i = 0; i < motors.size(); i++)
                         motors[i]->set_angle(p_rx_msg->mtr_angles[i],
                                              !p_rx_msg->is_relative);
+                    running_mtrs = true;
                     break;
 
                 case SerialUtils::CMDTYPE_CAL:
                     AccelMotor::calibrate(motors);
-                    done = true;
                     break;
 
                 case SerialUtils::CMDTYPE_ENDEFF_ON:
                     end_eff_on(true);
-                    done = true;
                     break;
 
                 case SerialUtils::CMDTYPE_ENDEFF_OFF:
                     end_eff_on(false);
-                    done = true;
                     break;
             }
 
@@ -165,15 +161,19 @@ void setup() {
             p_rx_msg = NULL;
             msg_sent = false;
         }
+        
+        bool done = true;
+        for (auto& mtr : motors) done &= !mtr->run();
 
         // Let the controller know if movement completed
-        if (done && !msg_sent) {
+        if ((done || !running_mtrs) && !msg_sent) {
             SerialUtils::CmdMsg tosend = {.cmd_type = SerialUtils::CMDTYPE_RESP};
             tosend.cmd_success = true;
             std::vector<char> tx_buf;
             SerialUtils::pack(tx_buf, tosend);
             SerialPort.write((char*)&tx_buf[0], tx_buf.size());
             msg_sent = true;
+            running_mtrs = false;
         }
     };
 }

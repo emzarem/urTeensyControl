@@ -5,7 +5,11 @@
 #include <string.h>
 
 void test_serialization(void) {
-    SerialUtils::CmdMsg to_send = {1, 1, 150, 1};
+    SerialUtils::CmdMsg to_send = {
+        .cmd_type = SerialUtils::CMDTYPE_MTRS,
+        .is_relative = false,
+        .mtr_angles = {15, 20, 30}
+    };
     SerialUtils::CmdMsg rcv;
     std::vector<char> buff;
    
@@ -13,9 +17,8 @@ void test_serialization(void) {
     SerialUtils::unpack(buff, rcv);
 
     TEST_ASSERT_EQUAL(to_send.is_relative, rcv.is_relative);
-    TEST_ASSERT_EQUAL(to_send.m1_angle, rcv.m1_angle);
-    TEST_ASSERT_EQUAL(to_send.m2_angle, rcv.m2_angle);
-    TEST_ASSERT_EQUAL(to_send.m3_angle, rcv.m3_angle);
+    for (int i = 0; i < SerialUtils::MAX_SUPPORTED_MTRS; i++)
+        TEST_ASSERT_EQUAL(to_send.mtr_angles[i], rcv.mtr_angles[i]);
 }
 
 int main()
