@@ -1,5 +1,5 @@
-#include "SerialPacket.h"
 #include "AccelMotor.h"
+#include "SerialPacket.h"
 #include "settings.h"
 #include "util.h"
 
@@ -10,23 +10,21 @@
 //#define USE_USB
 
 #ifdef USE_USB
-    usb_serial_class& SerialPort = Serial;
+usb_serial_class& SerialPort = Serial;
 #else
-    HardwareSerial& SerialPort = Serial1;
+HardwareSerial& SerialPort = Serial1;
 #endif
 
-static inline void spi_setup()
-{
+static inline void spi_setup() {
     SPI.setMOSI(PIN_MOSI);
     SPI.setMISO(PIN_MISO);
     SPI.setSCK(PIN_SCK);
     SPI.begin();
 }
 
-static inline void serial_setup()
-{
+static inline void serial_setup() {
     SerialPort.begin(SER_BAUD_RATE);
-    while (!SerialPort){};
+    while (!SerialPort) {};
     SerialPort.println("");
 }
 
@@ -43,24 +41,51 @@ void blink() {
     digitalWrite(STD_LED, 1);
 }
 
-static float inline deg_to_step(float deg) {
-    return (deg/360.0)*STEPS_PER_REV*STEP_MODE;
+static inline void end_eff_on(bool on) {
+    digitalWrite(PIN_RELAY, on);
 }
 
-void setup() 
-{
+static inline float deg_to_step(float deg) {
+    return (deg / 360.0) * STEPS_PER_REV * STEP_MODE;
+}
+
+void setup() {
     // Setup comms first
     spi_setup();
     delay(1000);
-    
+
     serial_setup();
     delay(1000);
 
     // Setup Motors
-    AccelMotor sm1(PIN_M1_CS, PIN_LIM1, PIN_ENC1A, PIN_ENC1B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
-    AccelMotor sm2(PIN_M2_CS, PIN_LIM2, PIN_ENC2A, PIN_ENC2B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
-    AccelMotor sm3(PIN_M3_CS, PIN_LIM3, PIN_ENC3A, PIN_ENC3B, STEPS_PER_REV, static_cast<HPSDDecayMode>(DECAY_MODE), CURRENT_LIMIT_MA, static_cast<HPSDStepMode>(STEP_MODE), USE_ENC);
-    
+    AccelMotor sm1(PIN_M1_CS,
+                   PIN_LIM1,
+                   PIN_ENC1A,
+                   PIN_ENC1B,
+                   STEPS_PER_REV,
+                   static_cast<HPSDDecayMode>(DECAY_MODE),
+                   CURRENT_LIMIT_MA,
+                   static_cast<HPSDStepMode>(STEP_MODE),
+                   USE_ENC);
+    AccelMotor sm2(PIN_M2_CS,
+                   PIN_LIM2,
+                   PIN_ENC2A,
+                   PIN_ENC2B,
+                   STEPS_PER_REV,
+                   static_cast<HPSDDecayMode>(DECAY_MODE),
+                   CURRENT_LIMIT_MA,
+                   static_cast<HPSDStepMode>(STEP_MODE),
+                   USE_ENC);
+    AccelMotor sm3(PIN_M3_CS,
+                   PIN_LIM3,
+                   PIN_ENC3A,
+                   PIN_ENC3B,
+                   STEPS_PER_REV,
+                   static_cast<HPSDDecayMode>(DECAY_MODE),
+                   CURRENT_LIMIT_MA,
+                   static_cast<HPSDStepMode>(STEP_MODE),
+                   USE_ENC);
+
     std::vector<AccelMotor*> motors;
     motors.push_back(&sm1);
     motors.push_back(&sm2);
@@ -76,13 +101,15 @@ void setup()
     }
 
     // Bring out of sleep
+    pinMode(PIN_RELAY, OUTPUT);
     pinMode(PIN_N_SLP, OUTPUT);
     pinMode(PIN_RST, OUTPUT);
     digitalWrite(PIN_N_SLP, 1);
     digitalWrite(PIN_RST, 0);
+    end_eff_on(false);
 
     delay(1);
-    
+
     // Show alive
     pinMode(STD_LED, OUTPUT);
     digitalWrite(STD_LED, 1);
@@ -90,12 +117,13 @@ void setup()
     // For serial comms
     bool msg_sent = false;
     std::vector<char> bytes;
-    SerialUtils::CmdMsg *p_rx_msg = NULL;
+    SerialUtils::CmdMsg* p_rx_msg = NULL;
 
     // Now calibrate everything
     AccelMotor::calibrate(motors);
-    
-    while(1) {
+    bool running_mtrs = false;
+
+    while (1) {
         if (SerialPort.available() > 0) {
             uint8_t next_byte = SerialPort.read();
             if (next_byte == SerialUtils::DELIMITER) {
@@ -106,38 +134,46 @@ void setup()
                 bytes.push_back(next_byte);
             }
         }
-        
+
         if (p_rx_msg) {
-            // If they are all 0, we are effectively do calibration again
-            if (0 == p_rx_msg->m1_angle &&
-                0 == p_rx_msg->m2_angle &&
-                0 == p_rx_msg->m3_angle)
-            {
-                AccelMotor::calibrate(motors);
+            switch (p_rx_msg->cmd_type) {
+                case SerialUtils::CMDTYPE_MTRS:
+                    for (int i = 0; i < motors.size(); i++)
+                        motors[i]->set_angle(p_rx_msg->mtr_angles[i],
+                                             !p_rx_msg->is_relative);
+                    running_mtrs = true;
+                    break;
+
+                case SerialUtils::CMDTYPE_CAL:
+                    AccelMotor::calibrate(motors);
+                    break;
+
+                case SerialUtils::CMDTYPE_ENDEFF_ON:
+                    end_eff_on(true);
+                    break;
+
+                case SerialUtils::CMDTYPE_ENDEFF_OFF:
+                    end_eff_on(false);
+                    break;
             }
-            else
-            {
-                sm1.set_angle(p_rx_msg->m1_angle, !p_rx_msg->is_relative);
-                sm2.set_angle(p_rx_msg->m2_angle, !p_rx_msg->is_relative);
-                sm3.set_angle(p_rx_msg->m3_angle, !p_rx_msg->is_relative);
-            }
+
             delete p_rx_msg;
             p_rx_msg = NULL;
             msg_sent = false;
         }
-       
+        
         bool done = true;
-        for (auto& mtr : motors)
-            done &= !mtr->run();
+        for (auto& mtr : motors) done &= !mtr->run();
 
         // Let the controller know if movement completed
-        if (done && !msg_sent) {
-            SerialUtils::CmdMsg tosend = {0};
-            tosend.motors_done = true;
+        if ((done || !running_mtrs) && !msg_sent) {
+            SerialUtils::CmdMsg tosend = {.cmd_type = SerialUtils::CMDTYPE_RESP};
+            tosend.cmd_success = true;
             std::vector<char> tx_buf;
             SerialUtils::pack(tx_buf, tosend);
-            SerialPort.write((char *)&tx_buf[0], tx_buf.size());
+            SerialPort.write((char*)&tx_buf[0], tx_buf.size());
             msg_sent = true;
+            running_mtrs = false;
         }
     };
 }

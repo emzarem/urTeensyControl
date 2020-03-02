@@ -30,6 +30,9 @@ const uint8_t PIN_M2_CS = 8; // M2
 const uint8_t PIN_M3_CS = 9;
 const uint8_t PIN_M1_CS = 10; // M1
 
+// End Effector
+const uint8_t PIN_RELAY = 4; 
+
 /* Properties */
 // Serial
 const uint32_t SER_BAUD_RATE = 115200;
