@@ -157,13 +157,13 @@ void setup() {
                     end_eff_on(false);
                     break;
             }
-            
+
             response = *p_rx_msg;
             delete p_rx_msg;
             p_rx_msg = NULL;
             msg_sent = false;
         }
-        
+
         bool done = true;
         for (auto& mtr : motors) done &= !mtr->run();
 
