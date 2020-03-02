@@ -67,6 +67,7 @@ AccelMotor::AccelMotor(uint8_t cs_pin,
     // Get steps per rev
     m_steps_per_rev = (uint16_t)step_mode * full_steps_per_rev;
     m_deg_to_step = (float)m_steps_per_rev / 360;
+    m_step_tol = (uint16_t)(step_tol_deg * full_steps_per_rev / 360); 
 
     long cal_time_us =
         40000 /
@@ -152,7 +153,7 @@ long AccelMotor::distanceToGo() {
 
     long delta = targetPosition() - current_steps;
 
-    return abs(delta) < step_tol ? 0 : delta;  // round down if necessary
+    return abs(delta) < m_step_tol ? 0 : delta;  // round down if necessary
 }
 
 /* Function: <run>
