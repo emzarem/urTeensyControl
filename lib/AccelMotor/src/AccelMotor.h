@@ -65,6 +65,7 @@ private:
     // Relationships / Ratios
     uint16_t m_steps_per_rev;  // based on step mode
     float m_deg_to_step;
+    uint16_t m_step_tol;
 
     // Flags
     bool m_at_limit;
@@ -76,7 +77,7 @@ private:
 
     // Encoder stuff
     static const uint32_t enc_cpr = 1024;
-    static const int16_t step_tol = 5;  // How close to target
+    static const float step_tol_deg = 1.0;  // How close to target
 
     // Weightings
     static const float step_weight = 0.5;
