@@ -122,6 +122,7 @@ void setup() {
     // Now calibrate everything
     AccelMotor::calibrate(motors);
     bool running_mtrs = false;
+    SerialUtils::CmdMsg response;
 
     while (1) {
         if (SerialPort.available() > 0) {
@@ -157,20 +158,20 @@ void setup() {
                     break;
             }
 
+            response = *p_rx_msg;
             delete p_rx_msg;
             p_rx_msg = NULL;
             msg_sent = false;
         }
-        
+
         bool done = true;
         for (auto& mtr : motors) done &= !mtr->run();
 
         // Let the controller know if movement completed
         if ((done || !running_mtrs) && !msg_sent) {
-            SerialUtils::CmdMsg tosend = {.cmd_type = SerialUtils::CMDTYPE_RESP};
-            tosend.cmd_success = true;
+            response.cmd_success = true;
             std::vector<char> tx_buf;
-            SerialUtils::pack(tx_buf, tosend);
+            SerialUtils::pack(tx_buf, response);
             SerialPort.write((char*)&tx_buf[0], tx_buf.size());
             msg_sent = true;
             running_mtrs = false;
