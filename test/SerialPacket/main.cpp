@@ -16,9 +16,7 @@ void test_serialization(void) {
     SerialUtils::pack(buff, to_send);
     SerialUtils::unpack(buff, rcv);
 
-    TEST_ASSERT_EQUAL(to_send.is_relative, rcv.is_relative);
-    for (int i = 0; i < SerialUtils::MAX_SUPPORTED_MTRS; i++)
-        TEST_ASSERT_EQUAL(to_send.mtr_angles[i], rcv.mtr_angles[i]);
+    TEST_ASSERT(to_send == rcv);
 }
 
 int main()
